@@ -37,6 +37,6 @@
   flex-direction: row;
   justify-content: space-around;
   color: var(--color-titles);
-  padding: var(--padding-2);
+  padding: var(--padding-1);
   font-size: 1em;
 }

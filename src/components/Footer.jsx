@@ -24,7 +24,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <p className="footer-derechos">Copyright 2022 . Hecho por Waldir</p>
+      <span className="footer-derechos">Copyright 2022 . Hecho por Waldir</span>
     </div>
   );
 };
