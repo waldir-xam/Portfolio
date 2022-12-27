@@ -31,27 +31,31 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className="hero-left">
-          <h1>
-            Soy <span className="hashTag">diseñador web </span>y
-            <span className="hashTag"> desarrollador front-end</span>
-          </h1>
+        {/* HERO 2 */}
 
-          <p>
-            Diseño y desarrollo sitios responsive donde la tecnologia conoce la
-            creatividad.
-          </p>
-          <button className="call2action" href="#contact">
-            Contactame! <i class="fa-solid fa-angle-down"></i>
-          </button>
-        </div>
-        <div className="hero-right">
-          <img src={FotoWaldir} alt="profile pic" />
-          <span className="status">
-            <div className="square-status"></div>
-            Actualmente trabajando como <a href="">Freelance</a>
-          </span>
-        </div>
+          
+          <div className="hero-left">
+            <h1>
+              Soy <span className="hashTag">diseñador web </span>y
+              <span className="hashTag"> desarrollador front-end</span>
+            </h1>
+
+            <p>
+              Diseño y desarrollo sitios responsive donde la tecnologia conoce
+              la creatividad.
+            </p>
+            <button className="call2action" href="#contact">
+              Contactame! <i class="fa-solid fa-angle-down"></i>
+            </button>
+          </div>
+          <div className="hero-right">
+            <img src={FotoWaldir} alt="profile pic" />
+            <span className="status">
+              <div className="square-status"></div>
+              Actualmente trabajando como <a href="">Freelance</a>
+            </span>
+          </div>
+      
       </div>
 
       {/* REFRAN FACHERO*/}
