@@ -1,54 +1,117 @@
-.header {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding: var(--padding-1);
-  font-size: 1.09em;
+/* RESPONSIVE SMARTPHONE */
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: .7em;
+    font-size: 1.09em;
+  }
+  .nav-left {
+    color: var(--color-titles);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  .menu-header {
+    width: 35%;
+  }
+  .menu-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu-header ul li {
+    list-style: none;
+  }
+  .menu-header ul li a {
+    text-decoration: none;
+    color: var(--color-titles);
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+  }
+  .menu-header ul li a:hover {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+  .menu-header ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .menu-header ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hashTag {
+    color: var(--color-primary);
+  }
 }
-.nav-left {
-  color: var(--color-titles);
-  font-weight: 600;
-  color: var(--color-primary);
+/* FIN RESPONSIVE SMARTPHONE */
+
+/* RESPONSIVE PC */
+@media only screen and (min-width: 601px) {
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: var(--padding-1);
+    font-size: 1.09em;
+  }
+  .nav-left {
+    color: var(--color-titles);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  .menu-header {
+    width: 35%;
+  }
+  .menu-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu-header ul li {
+    list-style: none;
+  }
+  .menu-header ul li a {
+    text-decoration: none;
+    color: var(--color-titles);
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+  }
+  .menu-header ul li a:hover {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+  .menu-header ul li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .menu-header ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hashTag {
+    color: var(--color-primary);
+  }
 }
-.menu-header {
-  width: 35%;
-}
-.menu-header ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.menu-header ul li {
-  list-style: none;
-}
-.menu-header ul li a {
-  text-decoration: none;
-  color: var(--color-titles);
-  border-radius: 20px;
-  font-weight: 600;
-  display: inline-block;
-  position: relative;
-}
-.menu-header ul li a:hover {
-  text-decoration: none;
-  color: var(--color-primary);
-}
-.menu-header ul li a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--color-primary);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.menu-header ul li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.hashTag {
-  color: var(--color-primary);
-}
+/* FIN RESPONSIVE PC */
