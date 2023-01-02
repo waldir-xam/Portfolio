@@ -5,6 +5,7 @@ import ImgOne from "../img/img1.png";
 import Proyect1 from "../img/proy1.png";
 import Proyect2 from "../img/proy2.png";
 import SkillsLeft from "../img/skills2.jpg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -285,60 +286,79 @@ const Home = () => {
 
       {/* CONTACTO */}
       <div className="contact" id="#contact">
-        <div className="contact-left">
-          <div className="title-container">
-            <h2>
-              <span className="hashTag">#</span>contacto
-            </h2>
-            <div className="space-line"></div>
-          </div>
-          <div className="contact-left-content">
-            <p>
-              Estoy interesado en oportunidades freelance. Sin embargo, si
-              tienes otra solicitud o pregunta, no dudes en ponerse en contacto
-              conmigo.
-            </p>
-            <div className="contact-mini-box">
-              <h6>Tambien puedes escribirme un mensaje aqui:</h6>
-              <ul>
-                <li>
-                  <i class="fa-brands fa-github">
-                    <a
-                      href="https://google.com"
-                      target="_blank"
-                      rel="noreferrer"
-                    ></a>
-                  </i>
-                  waldir-xam
-                </li>
-                <li>
-                  <i class="fa-brands fa-discord"></i> ratatrampa#7994
-                </li>
-                <li>
-                  <i class="fa-brands fa-linkedin"></i> waldirxam
-                </li>
-              </ul>
+        <div className="contact-container">
+          <div className="contact-left">
+            <div className="title-container">
+              <h2>
+                <span className="hashTag">#</span>contacto
+              </h2>
+              <div className="space-line"></div>
             </div>
-          </div>
-        </div>
-        <div className="contact-right">
-          <div className="contact-right-inputContainer">
-            <div className="input-row">
-              <div className="col-50">
-                <input type="text" placeholder="Nombre" />
-                <input type="text" placeholder="Email" />
+            <div className="contact-left-content">
+              <p>
+                Estoy interesado en oportunidades freelance. Sin embargo, si
+                tienes otra solicitud o pregunta, no dudes en ponerse en
+                contacto conmigo.
+              </p>
+              <div className="contact-mini-box">
+                <h6>Tambien puedes escribirme un mensaje aqui:</h6>
+                <ul>
+                  <li>
+                    <Link
+                      onClick={() =>
+                        window.open("https://github.com/waldir-xam", "_blank")
+                      }
+                    >
+                      <i class="fa-brands fa-github"></i> waldir-xam
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() =>
+                        window.open(
+                          "http://www.discordapp.com/users/597457139736510505",
+                          "_blank"
+                        )
+                      }
+                    >
+                      <i class="fa-brands fa-discord"></i> ratatrampa#7994
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/waldirxam/",
+                          "_blank"
+                        )
+                      }
+                    >
+                      <i class="fa-brands fa-linkedin"></i> waldirxam
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div className="col-100">
-              <input type="text" placeholder="Asunto" />
-              <div className="col-msg">
-                <input type="text" placeholder="Mensaje" />
+          </div>
+          <div className="contact-right">
+            <div className="contact-right-inputContainer">
+              <div className="input-row">
+                <div className="col-50">
+                  <input type="text" placeholder="Nombre" />
+                  <input type="text" placeholder="Email" />
+                </div>
+              </div>
+              <div className="col-100">
+                <input type="text" placeholder="Asunto" />
+                <div className="col-msg">
+                  <input type="text" placeholder="Mensaje" />
+                </div>
               </div>
             </div>
+            <button className="input-send">
+              Enviar <i class="fa-regular fa-paper-plane"></i>
+            </button>
           </div>
-          <button className="input-send">
-            Enviar <i class="fa-regular fa-paper-plane"></i>
-          </button>
         </div>
       </div>
     </div>

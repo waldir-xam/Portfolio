@@ -1,5 +1,6 @@
 /* RESPONSIVE SMARTPHONE */
 @media only screen and (max-width: 600px) {
+  
   .header {
     width: 100%;
     display: flex;
@@ -16,10 +17,25 @@
     width: 35%;
   }
   .menu-header ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+    clip: rect(0,0,0,0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    transition: clip 0.35s, -webkit-clip-path 0.35s;
   }
+  .menu-header ul.open{
+    clip: rect(0, auto, auto, 0);
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+  
   .menu-header ul li {
     list-style: none;
   }
