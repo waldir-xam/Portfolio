@@ -1,0 +1,12 @@
+export { default as Switch } from './components/Common/Buttons/Switch/Switch';
+export { default as Footer } from './components/Common/Footer/Footer';
+export { default as Header } from './components/Common/Header/Header';
+export { default as Layout } from './components/Common/Layout/Layout';
+export * from './components/Context/ThemeContext';
+export * from './components/Icons';
+export * from './index';
+export * from './main';
+export { default as AboutMe } from './pages/Aboutme/AboutMe';
+export { default as Home } from './pages/Home/Home';
+export { default as Projects } from './pages/Projects/Projects';
+export { default as Router } from './router/Router';
