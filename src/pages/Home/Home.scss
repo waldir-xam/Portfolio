@@ -24,12 +24,7 @@ $BgDark: var(--bgdark);
     justify-content: center;
   }
   .hero-aside {
-    width: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2em;
+    display: none;
   }
   .aside-line {
     height: 40vh;
@@ -430,6 +425,14 @@ $BgDark: var(--bgdark);
       color: $LM-Title;
     }
   }
+  .home-second-container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .home-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
   .hero {
     width: 100%;
     height: 100vh;
@@ -529,6 +532,7 @@ $BgDark: var(--bgdark);
       font-weight: var(--fw-5);
       transition: 0.3s ease;
       color: var(--color-primary);
+      cursor: pointer;
     }
 
     *:hover {

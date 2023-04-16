@@ -13,7 +13,9 @@ $BgDark: var(--BgDark);
   text-decoration: none;
 }
 
+// Header.scss
 .header-container {
+  top: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -21,10 +23,15 @@ $BgDark: var(--BgDark);
   padding: 0.25rem 2rem 0.25rem 2rem;
   position: fixed;
   width: 100%;
-  .dark-theme {
-    background-color: var(--BgDark);
+  transition: top 0.3s ease-in-out;
+
+  &.dark-theme {
+    background-color: var(
+      --BgDark
+    ); // Removemos la propiedad del fondo negro y utilizamos la variable --BgDark
   }
-  .light-theme {
+
+  &.light-theme {
     background-color: var(--BgLight);
   }
 }

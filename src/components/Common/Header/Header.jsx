@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
 import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -7,9 +7,29 @@ import Switch from "../Buttons/Switch/Switch.jsx";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const visible = prevScrollPos > currentScrollPos;
+      setPrevScrollPos(currentScrollPos);
+      setVisible(visible);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
-    <header className="header-container">
+    <header
+      className="header-container"
+      style={{ top: visible ? "0" : "-100px" }}
+    >
       <Link to="/" className="link-to">
         <div className="logo-container">
           <span className="logo-icon">
@@ -60,13 +80,14 @@ const Header = () => {
             <Icon className="menu-open-btn" css="icon" icon={faBars} />
           )}
         </button>
+
         {/* FIN BOTON MENU OFF CANVAS - CEL/TABLET  */}
 
         {/* MENU RESPONSIVE */}
         <nav className={`${showMenu ? "block" : "hidden"} offcanvasMenu`}>
           <span className="">
             <button
-              className="menu-close-btn"
+              className="menu-open-btn"
               onClick={() => setShowMenu(!showMenu)}
             >
               {showMenu ? (
