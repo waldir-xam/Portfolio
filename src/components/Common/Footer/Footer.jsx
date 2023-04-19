@@ -1,5 +1,5 @@
 import React from "react";
-import "../Footer/Footer.css";
+import "../Footer/Footer.scss";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
 import {
@@ -52,7 +52,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <span className="footer-derechos">Copyright 2022 . Hecho por Waldir</span>
+      <span className="footer-derechos">Copyright 2023 . Hecho por Waldir</span>
     </div>
   );
 };

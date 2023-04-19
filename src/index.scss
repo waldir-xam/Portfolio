@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
+/* variables */
 :root {
   --color-primary: #ff8906;
   --color-secondary: #f25f4c;
@@ -22,6 +23,12 @@
   --fw-4: 600;
   --fw-5: 700;
 }
+$primary-color: var(--color-primary);
+$secondary-color: var(--color-fourth);
+$DM-Title: var(--DM-Title);
+$LM-Title: var(--LM-Title);
+$BgDark: var(--BgDark);
+
 body {
   font-family: var(--font-1);
 }

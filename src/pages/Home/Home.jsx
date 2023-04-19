@@ -1,6 +1,6 @@
 import React from "react";
 import "../Home/Home.scss";
-import fotoWaldir from "../../img/fotoWaldir.jpg";
+import fotowaldir from "../../img/fotowaldir.jpg";
 import imgOne from "../../img/img1.png";
 import proyectOne from "../../img/proy1.png";
 import proyectTwo from "../../img/proy2.png";
@@ -99,7 +99,7 @@ const Home = () => {
               </button>
             </div>
             <div className="hero-right">
-              <img src={fotoWaldir} alt="profile pic" />
+              <img src={fotowaldir} alt="profile pic" />
               {/*           <span className="status">
             <div className="square-status"></div>
             Actualmente trabajando como<span> Freelance</span>
@@ -254,28 +254,30 @@ const Home = () => {
                 <img src={proyectOne} style={{ height: "8em" }} />
                 <div className="proyect-tools">React,CSS MUI</div>
                 <div className="proyect-specs">
-                  <div className="proyect-title">GitHub Searcher 2.0</div>
-                  <div className="proyect-description">
-                    Buscador de usuarios de github, da info,detalles y repos del
-                    usuario buscado
-                  </div>
-                  <div className="proyect-box-btns">
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-live"
-                    >
-                      Live <Icon css="icon" icon={faCodeCommit} />
-                    </Link>
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-repo"
-                    >
-                      Repo <Icon css="icon" icon={faGithub} />
-                    </Link>
+                  <div className="proyect-title">GitHub Searcher</div>
+                  <div className="proyect-container">
+                    <div className="proyect-description">
+                      Buscador de usuarios de github, da info,detalles y repos
+                      del usuario buscado
+                    </div>
+                    <div className="proyect-box-btns">
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-live"
+                      >
+                        Live <Icon css="icon" icon={faCodeCommit} />
+                      </Link>
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-repo"
+                      >
+                        Repo <Icon css="icon" icon={faGithub} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -285,27 +287,29 @@ const Home = () => {
                 <img src={proyectTwo} style={{ height: "8em" }} />
                 <div className="proyect-tools">React,CSS, Tailwind</div>
                 <div className="proyect-specs">
-                  <div className="proyect-title">Portfolio 1.0</div>
-                  <div className="proyect-description">
-                    Portfolio con info acerca de mi, proyectos y contacto
-                  </div>
-                  <div className="proyect-box-btns">
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-live"
-                    >
-                      Live <Icon css="icon" icon={faCodeCommit} />
-                    </Link>
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-repo"
-                    >
-                      Repo <Icon css="icon" icon={faGithub} />
-                    </Link>
+                  <div className="proyect-title">Portfolio</div>
+                  <div className="proyect-container">
+                    <div className="proyect-description">
+                      Portfolio con info acerca de mi, proyectos y contacto
+                    </div>
+                    <div className="proyect-box-btns">
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-live"
+                      >
+                        Live <Icon css="icon" icon={faCodeCommit} />
+                      </Link>
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-repo"
+                      >
+                        Repo <Icon css="icon" icon={faGithub} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -316,28 +320,29 @@ const Home = () => {
                 <img src={proyectOne} style={{ height: "8em" }} />
                 <div className="proyect-tools">React,CSS, Tailwind</div>
                 <div className="proyect-specs">
-                  {" "}
                   <div className="proyect-title">Rick & Morti API</div>
-                  <div className="proyect-description">
-                    App usando la API fake de Rick & Morty
-                  </div>
-                  <div className="proyect-box-btns">
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-live"
-                    >
-                      Live <Icon css="icon" icon={faCodeCommit} />
-                    </Link>
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-repo"
-                    >
-                      Repo <Icon css="icon" icon={faGithub} />
-                    </Link>
+                  <div className="proyect-container">
+                    <div className="proyect-description">
+                      App usando la API fake de Rick & Morty
+                    </div>
+                    <div className="proyect-box-btns">
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-live"
+                      >
+                        Live <Icon css="icon" icon={faCodeCommit} />
+                      </Link>
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-repo"
+                      >
+                        Repo <Icon css="icon" icon={faGithub} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -346,29 +351,31 @@ const Home = () => {
 
               <div className="proyect-box">
                 <img src={proyectOne} style={{ height: "8em" }} />
-                <div className="proyect-tools">HTML, CSS , Bootstrap , JS</div>
+                <div className="proyect-tools">React,CSS, Tailwind</div>
                 <div className="proyect-specs">
-                  <div className="proyect-title">Portfolio 1.0</div>
-                  <div className="proyect-description">
-                    App usando la API de pokemon
-                  </div>
-                  <div className="proyect-box-btns">
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-live"
-                    >
-                      Live <Icon css="icon" icon={faCodeCommit} />
-                    </Link>
-                    <Link
-                      onClick={() =>
-                        window.open("https://github.com/waldir-xam", "_blank")
-                      }
-                      className="proyect-btn-repo"
-                    >
-                      Repo <Icon css="icon" icon={faGithub} />
-                    </Link>
+                  <div className="proyect-title">Another Proyect</div>
+                  <div className="proyect-container">
+                    <div className="proyect-description">
+                      Proyecto in progress
+                    </div>
+                    <div className="proyect-box-btns">
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-live"
+                      >
+                        Live <Icon css="icon" icon={faCodeCommit} />
+                      </Link>
+                      <Link
+                        onClick={() =>
+                          window.open("https://github.com/waldir-xam", "_blank")
+                        }
+                        className="proyect-btn-repo"
+                      >
+                        Repo <Icon css="icon" icon={faGithub} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

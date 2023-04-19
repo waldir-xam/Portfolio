@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Icon } from "../../../Icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "../../../Context/ThemeContext";
-import "./Switch.css";
+import "./Switch.scss";
 
 const Switch = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

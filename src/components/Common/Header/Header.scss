@@ -1,8 +1,4 @@
-$primary-color: var(--color-primary);
-$secondary-color: var(--color-fourth);
-$DM-Title: var(--DM-Title);
-$LM-Title: var(--LM-Title);
-$BgDark: var(--BgDark);
+@import "../../../index.scss";
 
 .hashTag {
   color: $primary-color;
@@ -24,14 +20,11 @@ $BgDark: var(--BgDark);
   position: fixed;
   width: 100%;
   transition: top 0.3s ease-in-out;
-
-  &.dark-theme {
-    background-color: var(
-      --BgDark
-    ); // Removemos la propiedad del fondo negro y utilizamos la variable --BgDark
+  .dark-theme & {
+    background-color: var(--BgDark);
   }
 
-  &.light-theme {
+  .light-theme & {
     background-color: var(--BgLight);
   }
 }
@@ -126,6 +119,9 @@ $BgDark: var(--BgDark);
       }
     }
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .resume {
@@ -151,6 +147,20 @@ $BgDark: var(--BgDark);
   }
   .light-theme & {
     color: $LM-Title;
+  }
+}
+
+.menu-open-btn {
+  display: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  color: $DM-Title;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  @media (max-width: 768px) {
+    display: block;
   }
 }
 
@@ -191,7 +201,7 @@ $BgDark: var(--BgDark);
     }
   }
 
-  &.menu-responsive {
+  & .menu-responsive {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,26 +209,16 @@ $BgDark: var(--BgDark);
     width: 100%;
     height: 100%;
     list-style: none;
-  }
+    .menu-close-btn {
+      cursor: pointer;
+      font-family: $primary-color;
+      font-size: 1.8em;
+      width: 2.5rem;
+      height: 2.5rem;
 
-  .menu-open-btn {
-    display: block;
-    height: 2.5rem;
-    width: 2.5rem;
-    cursor: pointer;
-    color: $DM-Title;
-    font-size: 1.5em;
-  }
-
-  .menu-close-btn {
-    cursor: pointer;
-    font-family: $primary-color;
-    font-size: 1.8em;
-    width: 2.5rem;
-    height: 2.5rem;
-
-    &:hover {
-      color: $primary-color;
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 
@@ -245,9 +245,9 @@ $BgDark: var(--BgDark);
     & {
       display: none;
     }
-    .menu-open-btn {
+    /*     .menu-open-btn {
       display: none;
-    }
+    } */
   }
 
   /* Estilos para pantallas extra grandes */
@@ -255,8 +255,8 @@ $BgDark: var(--BgDark);
     & {
       display: none;
     }
-    .menu-open-btn {
+    /*     .menu-open-btn {
       display: none;
-    }
+    } */
   }
 }
