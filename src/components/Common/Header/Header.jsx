@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
-import { faBars, faCode, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { Switch, Menu, MenuAside, MenuButton } from "../../../index";
 import "../Header/Header.scss";
-import Switch from "../Buttons/Switch/Switch.jsx";
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  // Estado para el scroll
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-
+  // Estado para abrir el menú
+  const [isOpen, setIsOpen] = useState(false);
+  // Función para el scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -17,14 +19,20 @@ const Header = () => {
       setPrevScrollPos(currentScrollPos);
       setVisible(visible);
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
-
+  // de esta forma se puede hacer el toggle del menú
+  const openMenu = () => {
+    // Función para abrir el menú
+    setIsOpen(true);
+  };
+  const closeMenu = () => {
+    // Función para cerrar el menú
+    setIsOpen(false);
+  };
   return (
     <header
       className="header-container"
@@ -41,85 +49,12 @@ const Header = () => {
       <div className="nav-right">
         {/* BOTON DARKMODE */}
         <Switch />
-        {/* FIN BOTON DARKMODE */}
-
-        {/* NAVBAR PC */}
-        <nav className="menu-header">
-          <ul>
-            <li>
-              <Link to="/">
-                <span className="hashTag">#</span>about
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects">
-                <span className="hashTag">#</span>projects
-              </Link>
-            </li>
-            <li>
-              <Link to="/sobre-mi">
-                <span className="hashTag">#</span>hobbies
-              </Link>
-            </li>
-
-            <Link to="/" className="resume">
-              <span className="hashTag">#</span>resume
-            </Link>
-          </ul>
-        </nav>
-        {/* FIN NAVBAR PC */}
-
-        {/* BOTON MENU OFF CANVAS - CEL/TABLET  */}
-        <button
-          className="menu-open-btn"
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          {showMenu ? (
-            <Icon className="menu-close-btn" css="icon" icon={faTimes} />
-          ) : (
-            <Icon className="menu-open-btn" css="icon" icon={faBars} />
-          )}
-        </button>
-
-        {/* FIN BOTON MENU OFF CANVAS - CEL/TABLET  */}
-
-        {/* MENU RESPONSIVE */}
-        <nav className={`${showMenu ? "block" : "hidden"} offcanvasMenu`}>
-          <span className="">
-            <button
-              className="menu-open-btn"
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              {showMenu ? (
-                <Icon className="menu-close-btn" css="icon" icon={faTimes} />
-              ) : (
-                <Icon className="menu-open-btn" css="icon" icon={faBars} />
-              )}
-            </button>
-          </span>
-          <ul className="menu-responsive">
-            <li>
-              <Link to="/">
-                <span className="hashTag">#</span>about
-              </Link>
-            </li>
-            <li>
-              <Link to="/proyectos">
-                <span className="hashTag">#</span>projects
-              </Link>
-            </li>
-            <li>
-              <Link to="/sobre-mi">
-                <span className="hashTag">#</span>hobbies
-              </Link>
-            </li>
-
-            <Link to="/" className="resume">
-              <span className="hashTag">#</span>resumen
-            </Link>
-          </ul>
-        </nav>
-        {/* FIN MENU RESPONSIVE*/}
+        {/* NAV PC */}
+        <Menu />
+        {/* BOTON MENU OFF CANVAS/ASIDE - CEL/TABLET  */}
+        <MenuButton openMenu={openMenu} />
+        {/* MENU RESPONSIVE/ASIDE */}
+        <MenuAside isOpen={isOpen} closeMenu={closeMenu} />
       </div>
     </header>
   );

@@ -1,14 +1,11 @@
 @import "../../../index.scss";
-
 .hashTag {
   color: $primary-color;
   margin-right: 0.3rem;
 }
-
 .link-to {
   text-decoration: none;
 }
-
 // Header.scss
 .header-container {
   top: 0;
@@ -20,107 +17,42 @@
   position: fixed;
   width: 100%;
   transition: top 0.3s ease-in-out;
+  z-index: 1;
   .dark-theme & {
     background-color: var(--BgDark);
   }
-
   .light-theme & {
     background-color: var(--BgLight);
   }
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  padding: 0.75rem 0.25rem 0.75rem 0.25rem;
-
-  .logo-icon {
-    margin-right: 0.75rem;
-    color: $primary-color;
-    font-size: 1.5em;
-  }
-
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: 600;
-
-    .dark-theme & {
-      color: $DM-Title;
-    }
-
-    .light-theme & {
-      color: $LM-Title;
-    }
-  }
-}
-
-.nav-right {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.menu-header {
-  ul {
+  .logo-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 1.5rem;
     align-items: center;
-
-    li {
-      list-style: none;
-
-      a {
-        text-decoration: none;
-        border-radius: 20px;
-        font-weight: 600;
-        display: inline-block;
-        position: relative;
-
-        &:hover {
-          text-decoration: none;
-          color: $primary-color;
-
-          .hashTag {
-            color: #fff;
-            .light-theme & {
-              color: $primary-color;
-            }
-          }
-        }
-        .dark-theme & {
-          color: $DM-Title;
-        }
-        .light-theme & {
-          color: $LM-Title;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          transform: scaleX(0);
-          height: 2px;
-          bottom: -2px;
-          left: 0;
-          background-color: $primary-color;
-          transform-origin: bottom right;
-          transition: transform 0.25s ease-out;
-        }
-
-        &:hover::after {
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.25rem 0.75rem 0.25rem;
+    .logo-icon {
+      margin-right: 0.75rem;
+      color: $primary-color;
+      font-size: 1.5em;
+    }
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      // VERIFICAR LUEGO SI SE POUEDE MIGRAR EL COLOR AL INICIO DE HEADER CONTAINER PARA ALIGERAR
+      .dark-theme & {
+        color: $DM-Title;
+      }
+      .light-theme & {
+        color: $LM-Title;
       }
     }
   }
-  @media (max-width: 768px) {
-    display: none;
+
+  .nav-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
   }
 }
 
@@ -147,116 +79,5 @@
   }
   .light-theme & {
     color: $LM-Title;
-  }
-}
-
-.menu-open-btn {
-  display: none;
-  height: 2.5rem;
-  width: 2.5rem;
-  cursor: pointer;
-  color: $DM-Title;
-  font-size: 1.5em;
-  background-color: transparent;
-  border: none;
-  @media (max-width: 768px) {
-    display: block;
-  }
-}
-
-.offcanvasMenu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 58%;
-  transform: translateX(0);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: $BgDark;
-  font-weight: 600;
-  color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-  ul li {
-    margin: 0.5rem 0 0.5rem 0;
-    text-decoration: none;
-    color: $DM-Title;
-
-    a {
-      text-decoration: none;
-      color: $DM-Title;
-    }
-
-    &:hover,
-    .nav-full ul li:hover {
-      text-underline-offset: 1px;
-      border-bottom: 1px solid;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
-      border-color: $primary-color;
-    }
-  }
-
-  & .menu-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    list-style: none;
-    .menu-close-btn {
-      cursor: pointer;
-      font-family: $primary-color;
-      font-size: 1.8em;
-      width: 2.5rem;
-      height: 2.5rem;
-
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
-
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 599px) {
-    .menu-header {
-      display: none;
-    }
-  }
-
-  /* Estilos para pantallas medianas */
-  @media (min-width: 600px) and (max-width: 991px) {
-    .menu-header {
-      display: none;
-    }
-    & {
-      width: 20%;
-      display: none;
-    }
-  }
-
-  /* Estilos para pantallas grandes */
-  @media (min-width: 992px) and (max-width: 1199px) {
-    & {
-      display: none;
-    }
-    /*     .menu-open-btn {
-      display: none;
-    } */
-  }
-
-  /* Estilos para pantallas extra grandes */
-  @media (min-width: 1200px) {
-    & {
-      display: none;
-    }
-    /*     .menu-open-btn {
-      display: none;
-    } */
   }
 }

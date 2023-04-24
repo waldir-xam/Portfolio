@@ -1,0 +1,102 @@
+@import "../../../../index.scss";
+
+.offcanvasMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $BgDark;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  ul li {
+    margin: 0.5rem 0 0.5rem 0;
+    text-decoration: none;
+    color: $DM-Title;
+
+    a {
+      text-decoration: none;
+      color: $DM-Title;
+    }
+
+    &:hover,
+    .nav-full ul li:hover {
+      text-underline-offset: 1px;
+      border-bottom: 1px solid;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-color: $primary-color;
+    }
+  }
+
+  // Media queries
+  @media (max-width: 599px) {
+    display: block; // ocultar el menú en pantallas pequeñas
+  }
+
+  @media (min-width: 600px) and (max-width: 991px) {
+    //width: 20%;
+    display: none; // establecer un ancho en pantallas medianas
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    display: none; // ocultar el menú en pantallas grandes
+  }
+
+  @media (min-width: 1200px) {
+    display: none; // ocultar el menú en pantallas extra grandes
+  }
+}
+.offcanvasMenu.show {
+  transform: translateX(0);
+}
+.menu-open-btn {
+  display: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  color: $DM-Title;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  @media (max-width: 768px) {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.menu-close-btn {
+  cursor: pointer;
+  font-family: $primary-color;
+  font-size: 1.8em;
+  width: 2.5rem;
+  height: 2.5rem;
+  &:hover {
+    color: $primary-color;
+  }
+  @media (max-width: 768px) {
+    color: #fff;
+    font-size: 3rem;
+    transition: all 0.3s ease-in-out;
+    display: none;
+  }
+}
+.menu-responsive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}

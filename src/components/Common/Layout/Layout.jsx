@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Footer } from "../../../index";
+import { Header, Footer, Aside } from "../../../index";
 import { ThemeContext } from "../../../index";
 import "./Layout.css";
 
@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={`App ${theme}-theme`}>
         <Header />
+        <Aside/>
         {children}
         <Footer />
       </div>

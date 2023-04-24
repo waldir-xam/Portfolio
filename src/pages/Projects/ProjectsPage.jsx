@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import "../Projects/Projects.css";
+import "./ProjectsPage.scss";
 
 const Button = styled.button`
   display: inline-block;

@@ -1,0 +1,99 @@
+@import "../../../index.scss";
+.contact {
+  display: flex;
+  flex-direction: row;
+  .contact-container {
+    display: flex;
+    padding: 3em 0;
+    .contact-left {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1.5rem;
+      .contact-left-content {
+        display: flex;
+        flex-direction: column;
+
+        /*         .contact-mini-box {
+          width: 65%;
+          border: solid 1px;
+          padding: var(--padding-1);
+          margin-top: 1.5em;
+          h6 {
+            font-weight: var(--fw-4);
+            color: var(--DM-Title);
+          }
+          ul li {
+            margin-top: 0.5em;
+            list-style: none;
+            a {
+              text-decoration: none;
+              .dark-theme & {
+                color: $DM-Title;
+              }
+              .light-theme & {
+                color: $LM-Title;
+              }
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        } */
+      }
+    }
+    .contact-right {
+      width: 60%;
+      color: $LM-Title;
+      font-size: 0.8rem;
+      .contact-right-inputContainer {
+        width: 86%;
+        display: flex;
+        flex-direction: column;
+        font-weight: var(--fw-3);
+        font-size: 1.1em;
+        margin-top: 3.5em;
+        input {
+          padding: 0.35em;
+          width: 100%;
+          color: var(--bgdark);
+        }
+        .input-row {
+          display: flex;
+          flex-direction: row;
+          .col-50 {
+            width: 100%;
+            margin-top: 0.2em;
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+          }
+        }
+        .col-100 {
+          width: 100%;
+          margin-top: 0.4em;
+          display: flex;
+          flex-direction: column;
+          gap: 5%;
+          input {
+            margin-top: 0.6em;
+          }
+          .col-msg input {
+            height: 20vh;
+          }
+        }
+      }
+      .input-send {
+        color: $LM-Title;
+        padding: 0.4em 1.1em 0.4em 1.1em;
+        border: solid 1px;
+        margin-top: 2em;
+        width: 86%;
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}

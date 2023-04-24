@@ -1,0 +1,80 @@
+@import "../../../index.scss";
+.space-line {
+  height: 0.1em;
+  background-color: var(--color-primary);
+  margin: 0.6em;
+
+  @media (max-width: 599px) {
+  }
+  @media (min-width: 600px) and (max-width: 991px) {
+    width: 60%;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+  }
+  @media (min-width: 1200px) {
+    width: 70%;
+  }
+}
+.sector {
+  padding: 3rem 0;
+  display: flex;
+  // Media queries
+  @media (max-width: 599px) {
+  }
+  @media (min-width: 600px) and (max-width: 991px) {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+  }
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+  .aboutme-home-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      padding: 0.5em;
+      width: 100%;
+      text-align: justify;
+    }
+    button {
+      margin-left: 2em;
+    }
+    // Media queries
+    @media (max-width: 599px) {
+    }
+    @media (min-width: 600px) and (max-width: 991px) {
+      flex-direction: column;
+      display: flex;
+      width: 100%;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+    }
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+  .aboutme-home-right {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 30em;
+    }
+    // Media queries
+    @media (max-width: 599px) {
+    }
+
+    @media (min-width: 600px) and (max-width: 991px) {
+      width: 100%;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+    }
+
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+}
