@@ -67,23 +67,15 @@ const Contact = () => {
           </div>
         </div>
         <div className="contact-right">
-          <div className="contact-right-inputContainer">
-            <div className="input-row">
-              <div className="col-50">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Email" />
-              </div>
-            </div>
-            <div className="col-100">
-              <input type="text" placeholder="Subject" />
-              <div className="col-msg">
-                <input type="text" placeholder="Write a mesage" />
-              </div>
-            </div>
-          </div>
-          <button className="input-send">
-            Send <Icon css="icon" icon={faPaperPlane} />
-          </button>
+          <form className="contact-right-form">
+            <input type="text" placeholder="Name" id="name" />
+            <input type="text" placeholder="Email" id="email" />
+            <input type="text" placeholder="Subject" id="subject" />
+            <textarea type="text" placeholder="Write a message" id="message" />
+            <button type="submit" className="input-send">
+              Send <Icon css="icon" icon={faPaperPlane} />
+            </button>
+          </form>
         </div>
       </div>
     </div>

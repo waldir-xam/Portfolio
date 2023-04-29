@@ -1,25 +1,50 @@
 import React, { useState } from "react";
-import { Icon } from "../../../Icons";
+import { Icon, Switch } from "../../../../index";
+import { Link } from "react-router-dom";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./MenuButton.scss";
 
-const MenuButton = ({ onClick }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const [isOpen, setIsOpen] = useState(false);
+const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
+    setOpen(!open);
   };
 
   return (
-    <button className="menu-open-btn" onClick={toggleMenu}>
-      {showMenu ? (
-        <Icon className="menu-close-btn" css="icon" icon={faTimes} />
-      ) : (
-        <Icon className="menu-open-btn" css="icon" icon={faBars} />
-      )}
-    </button>
+    <>
+      <div className={`overlay ${open ? "open" : ""}`} onClick={toggleMenu} />
+      <div className={`menu ${open ? "open" : ""}`}>
+        <ul>
+          <li>
+            <Link to="/" onClick={closeMenu}>
+              <span className="hashTag">#</span>about
+            </Link>
+          </li>
+          <li>
+            <Link to="/proyectos" onClick={closeMenu}>
+              <span className="hashTag">#</span>projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/sobre-mi" onClick={closeMenu}>
+              <span className="hashTag">#</span>hobbies
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="resume">
+              <span className="hashTag">#</span>resume
+            </Link>
+          </li>
+          <li>
+            <Switch />
+          </li>
+        </ul>
+      </div>
+      <button className="menu-toggle" onClick={toggleMenu}>
+        <span className={`menu-toggle__icon ${open ? "open" : ""}`} />
+      </button>
+    </>
   );
 };
 

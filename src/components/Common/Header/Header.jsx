@@ -9,8 +9,6 @@ const Header = () => {
   // Estado para el scroll
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  // Estado para abrir el menú
-  const [isOpen, setIsOpen] = useState(false);
   // Función para el scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -24,15 +22,18 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
-  // de esta forma se puede hacer el toggle del menú
+  // Estado para abrir el menú
+  const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
-    // Función para abrir el menú
     setIsOpen(true);
   };
   const closeMenu = () => {
-    // Función para cerrar el menú
     setIsOpen(false);
   };
+  const handleLinkClick = () => {
+    closeMenu();
+  };
+
   return (
     <header
       className="header-container"
@@ -48,13 +49,19 @@ const Header = () => {
       </Link>
       <div className="nav-right">
         {/* BOTON DARKMODE */}
-        <Switch />
+{/*         <Switch /> */}
         {/* NAV PC */}
-        <Menu />
+        <Menu handleLinkClick={handleLinkClick} />
         {/* BOTON MENU OFF CANVAS/ASIDE - CEL/TABLET  */}
-        <MenuButton openMenu={openMenu} />
+        <MenuButton isOpen={isOpen} openMenu={openMenu} closeMenu={closeMenu} />
+        
+        
         {/* MENU RESPONSIVE/ASIDE */}
-        <MenuAside isOpen={isOpen} closeMenu={closeMenu} />
+{/*         <MenuAside
+          handleLinkClick={handleLinkClick}
+          isOpen={isOpen}
+          closeMenu={closeMenu}
+        /> */}
       </div>
     </header>
   );

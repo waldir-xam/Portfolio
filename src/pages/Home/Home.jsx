@@ -43,8 +43,7 @@ const Home = () => {
               </h1>
 
               <p>
-                Desarrollo sitios responsive donde la tecnologia conoce la
-                creatividad.
+                Developing stuffs where tech meet craetivity.
               </p>
               <button className="call2action" href="#contact">
                 Contact me! <Icon css="icon" icon={faAngleDoubleDown} />

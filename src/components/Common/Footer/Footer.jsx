@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer-line"></div>
-      <div className="footer-main">
+{/*       <div className="footer-main">
         <div className="footer-left">
           <h5 className="footer-title">
             <Icon css="icon" icon={faCode} /> WalDev
@@ -51,8 +51,8 @@ const Footer = () => {
             </Link>
           </span>
         </div>
-      </div>
-      <span className="footer-derechos">Copyright 2023 . Hecho por Waldir</span>
+      </div> */}
+      <span className="footer-derechos">Developed by Waldir Apaza</span>
     </div>
   );
 };

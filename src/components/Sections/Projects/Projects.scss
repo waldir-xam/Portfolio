@@ -30,21 +30,29 @@
 
   .proyect-list {
     display: flex;
-    gap: 0%;
+    gap: 5%;
     padding: 4rem 0;
     justify-content: center;
     // Media queries
     @media (max-width: 599px) {
+      width: 100%;
+      padding: 0;
+      flex-direction: column;
+      gap: 3%;
+      margin: 6rem 0;
     }
-
     @media (min-width: 600px) and (max-width: 991px) {
+      width: 100%;
+      padding: 0;
+      flex-direction: column;
+      gap: 3%;
+      margin: 10rem 0;
+  
     }
     @media (min-width: 992px) and (max-width: 1199px) {
     }
-
     @media (min-width: 1200px) {
       width: 100%;
-
       flex-wrap: wrap;
     }
     /*     .proyect-box {
@@ -183,15 +191,70 @@
     } */
     .project {
       position: relative;
-      max-width: 45%;
+      width: 45%;
       overflow: hidden;
       display: flex;
       border: 0.15rem solid $primary-color;
-      border-radius: 2rem;
+      border-radius: 1rem;
       margin: 1rem;
+
+      @media (max-width: 599px) {
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0;
+        position: static;
+        overflow: visible;
+        margin-bottom: 2rem;
+        margin: 0rem;
+        img {
+          filter: none;
+          border-radius: 1rem 1rem 0 0;
+        }
+        .dark-theme & {
+          background-color: $BgDark;
+        }
+        .light-theme & {
+          background-color: $BgDark;
+        }
+      }
+      @media (min-width: 600px) and (max-width: 991px) {
+        width: 85%;
+        flex-wrap: wrap;
+        padding: 0;
+        position: static;
+        overflow: visible;
+        margin-bottom: 2rem;
+        margin: 0 auto;
+
+        img {
+          filter: none;
+          border-radius: 1rem 1rem 0 0;
+        }
+        .dark-theme & {
+          background-color: $BgDark;
+        }
+        .light-theme & {
+          background-color: $BgDark;
+        }
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+      }
+      @media (min-width: 1200px) {
+        width: 100%;
+        flex-wrap: wrap;
+      }
       img {
         transition: filter 0.3s;
         height: auto;
+        @media (max-width: 599px) {
+          width: 100%;
+        }
+        @media (min-width: 600px) and (max-width: 991px) {
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+        }
+        @media (min-width: 1200px) {
+        }
       }
       &:hover {
         filter: brightness(80%);
@@ -229,10 +292,10 @@
           display: flex;
           flex-direction: row;
           gap: 5%;
-          padding: 0.5rem 0rem;
+          padding: 0.8rem 0rem;
           li {
             border: 0.13rem solid $primary-color;
-            border-radius: .75rem;
+            border-radius: 0.75rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.8rem;
             font-weight: 700;
@@ -245,32 +308,56 @@
           width: 100%;
           display: flex;
           flex-direction: row;
-          gap: 2%;
+          gap: 4%;
+          @media (max-width: 599px) {
+            margin-left: 0.4rem;
+          }
+          @media (min-width: 600px) and (max-width: 991px) {
+          }
+          @media (min-width: 992px) and (max-width: 1199px) {
+          }
+          @media (min-width: 1200px) {
+          }
           a {
             color: $DM-Title;
             font-size: 1.25rem;
             font-weight: 700;
-            &:hover{
+            &:hover {
               color: $primary-color;
             }
           }
         }
-        @media only screen and (max-width: 768px) {
+        @media (max-width: 599px) {
           position: static;
           transform: translateY(0);
           background-color: transparent;
-          color: #000;
           display: block;
           text-align: center;
+          width: 100%;
+          .dark-theme {
+            color: $DM-Title;
+          }
+          .light-theme {
+            color: $LM-Title;
+          }
         }
-      }
-
-      @media only screen and (max-width: 768px) {
-        position: static;
-        overflow: visible;
-        margin-bottom: 2rem;
-        img {
-          filter: none;
+        @media (min-width: 600px) and (max-width: 991px) {
+          position: static;
+          transform: translateY(0);
+          background-color: transparent;
+          display: block;
+          text-align: center;
+          width: 100%;
+          .dark-theme {
+            color: $DM-Title;
+          }
+          .light-theme {
+            color: $LM-Title;
+          }
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+        }
+        @media (min-width: 1200px) {
         }
       }
     }

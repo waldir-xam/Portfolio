@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Menu.scss";
 
-const MenuAside = ({}) => {
+const Menu = ({}) => {
   return (
     <nav className="menu-header">
       <ul>
@@ -30,4 +30,4 @@ const MenuAside = ({}) => {
   );
 };
 
-export default MenuAside;
+export default Menu;

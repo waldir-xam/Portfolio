@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../../../Icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,7 @@ import "./MenuAside.scss";
 
 const MenuAside = ({ isOpen, onClose }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
 
   const openMenu = () => {
     setShowMenu(true);
@@ -13,11 +14,25 @@ const MenuAside = ({ isOpen, onClose }) => {
 
   const closeMenu = () => {
     setShowMenu(false);
-    closeMenu();
+    onClose();
   };
 
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      closeMenu();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className={`offcanvasMenu ${showMenu ? "show" : ""}`}>
+    <nav className={`offcanvasMenu ${showMenu ? "show" : ""}`} ref={menuRef}>
       <button className="menu-open-btn" onClick={closeMenu}>
         <Icon className="menu-close-btn" css="icon" icon={faTimes} />
       </button>

@@ -5,16 +5,37 @@
   .contact-container {
     display: flex;
     padding: 3em 0;
+    // Media queries
+    @media (max-width: 599px) {
+      flex-direction: column;
+    }
+    @media (min-width: 600px) and (max-width: 991px) {
+      flex-direction: column;
+      width: 100%;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+    }
+    @media (min-width: 1200px) {
+    }
     .contact-left {
-      width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 1.5rem;
+      // Media queries
+      @media (max-width: 599px) {
+      }
+      @media (min-width: 600px) and (max-width: 991px) {
+        width: 100%;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+      }
+      @media (min-width: 1200px) {
+        width: 40%;
+        padding: 0 1.5rem;
+      }
       .contact-left-content {
         display: flex;
         flex-direction: column;
-
         /*         .contact-mini-box {
           width: 65%;
           border: solid 1px;
@@ -44,54 +65,67 @@
       }
     }
     .contact-right {
-      width: 60%;
       color: $LM-Title;
       font-size: 0.8rem;
-      .contact-right-inputContainer {
-        width: 86%;
+      @media (max-width: 599px) {
+        margin-top: 2.5rem;
+      }
+      @media (min-width: 600px) and (max-width: 991px) {
+        width: 100%;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+      }
+      @media (min-width: 1200px) {
+        width: 60%;
+      }
+      .contact-right-form {
         display: flex;
         flex-direction: column;
         font-weight: var(--fw-3);
         font-size: 1.1em;
-        margin-top: 3.5em;
-        input {
-          padding: 0.35em;
-          width: 100%;
-          color: var(--bgdark);
+        margin: 0 auto;
+        input,
+        textarea,
+        button {
+          padding: 0.35rem;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.5rem;
+          margin-top: 1.2rem;
         }
-        .input-row {
-          display: flex;
-          flex-direction: row;
-          .col-50 {
+        @media (max-width: 599px) {
+        }
+        @media (min-width: 600px) and (max-width: 991px) {
+          margin-top: 1.5rem;
+          width: 100%;
+          gap: 1.25rem;
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+        }
+        @media (min-width: 1200px) {
+          width: 86%;
+        }
+        .input-send {
+          color: $LM-Title;
+          border: solid 1px;
+
+          &:hover {
+            color: var(--color-primary);
+            transition: 0.3s;
+          }
+          @media (max-width: 599px) {
+          }
+          @media (min-width: 600px) and (max-width: 991px) {
+            //margin-top: 1.5rem;
             width: 100%;
-            margin-top: 0.2em;
-            display: flex;
-            flex-direction: row;
-            gap: 5%;
           }
-        }
-        .col-100 {
-          width: 100%;
-          margin-top: 0.4em;
-          display: flex;
-          flex-direction: column;
-          gap: 5%;
-          input {
-            margin-top: 0.6em;
+          @media (min-width: 992px) and (max-width: 1199px) {
           }
-          .col-msg input {
-            height: 20vh;
+          @media (min-width: 1200px) {
+            width: 100%;
+            margin-top: 2em;
+            padding: 0.4em 1.1em 0.4em 1.1em;
           }
-        }
-      }
-      .input-send {
-        color: $LM-Title;
-        padding: 0.4em 1.1em 0.4em 1.1em;
-        border: solid 1px;
-        margin-top: 2em;
-        width: 86%;
-        &:hover {
-          color: var(--color-primary);
         }
       }
     }
