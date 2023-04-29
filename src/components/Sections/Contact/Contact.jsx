@@ -14,7 +14,7 @@ const Contact = () => {
     <div className="contact" id="#contact">
       <div className="title-container">
         <h2>
-          <span className="hashTag">#</span>contacto
+          <span className="hashTag">#</span>contact
         </h2>
         <div className="space-line"></div>
       </div>
@@ -22,9 +22,7 @@ const Contact = () => {
         <div className="contact-left">
           <div className="contact-left-content">
             <p>
-              Estoy interesado en oportunidades, y colaborar en proyetos, si
-              tienes alguna solicitud o pregunta, no dudes en ponerse en
-              contacto conmigo.
+            I am interested in opportunities, and collaborate on projects, if you have any request or question, do not hesitate to contact me.
             </p>
             {/*             <div className="contact-mini-box">
               <h6>Tambien puedes escribirme un mensaje aqui:</h6>

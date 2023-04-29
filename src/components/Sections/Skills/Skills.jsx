@@ -16,7 +16,7 @@ const Skills = () => {
     <div className="skills">
       <div className="title-container">
         <h2>
-          <span className="hashTag">#</span>habilidades
+          <span className="hashTag">#</span>skills
         </h2>
         <div className="space-line"></div>
       </div>

@@ -18,15 +18,10 @@ const Proyects = () => {
       <div className="proyectsHead">
         <div className="title-container">
           <h2>
-            <span className="hashTag">#</span>proyectos
+            <span className="hashTag">#</span>projects
           </h2>
           <div className="space-line"></div>
         </div>
-        {/*         <div className="ver-mas">
-          <Link to="/projects">
-            Ver todo <Icon css="icon" icon={faArrowRight} />
-          </Link>
-        </div> */}
       </div>
       {/* pro 2 */}
       <div className="proyect-list">

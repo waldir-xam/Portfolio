@@ -31,11 +31,9 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
               <span className="hashTag">#</span>hobbies
             </Link>
           </li>
-          <li>
-            <Link to="/" className="resume">
-              <span className="hashTag">#</span>resume
-            </Link>
-          </li>
+          <Link to="/" className="resume">
+            <span className="hashTag">#</span>resume
+          </Link>
           <li>
             <Switch />
           </li>
