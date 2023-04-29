@@ -42,12 +42,11 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        height: 100vh;
-
         // Media queries
         @media (max-width: 599px) {
           flex-direction: column;
           width: 100%;
+          margin-top: 3rem;
         }
         @media (min-width: 600px) and (max-width: 991px) {
           flex-direction: column;

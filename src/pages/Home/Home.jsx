@@ -24,13 +24,10 @@ const Home = () => {
                 <Typewritter
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString("Web Developer")
+                      .typeString("Frontend Dev")
                       .pauseFor(750)
                       .deleteAll(50)
                       .typeString("Freelancer")
-                      .pauseFor(750)
-                      .deleteAll(50)
-                      .typeString("FullStack Dev")
                       .pauseFor(750)
                       .deleteAll(50)
                       .start();
