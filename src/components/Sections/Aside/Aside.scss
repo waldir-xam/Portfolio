@@ -40,9 +40,20 @@
     display: none;
   }
   @media (min-width: 600px) and (max-width: 991px) {
+    opacity: 0;
+    animation: aparecer 1s ease forwards;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
   }
   @media (min-width: 1200px) {
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

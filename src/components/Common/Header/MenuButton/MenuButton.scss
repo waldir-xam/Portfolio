@@ -16,13 +16,15 @@ $primary-color: #ff8906;
   color: $BgDark;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  
+
   @media (max-width: 599px) {
-display: block;
+    display: block;
   }
   @media (min-width: 600px) and (max-width: 991px) {
+    display: block;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
+    display: none;
   }
   @media (min-width: 1200px) {
     display: none;
@@ -44,7 +46,7 @@ display: block;
     }
 
     &.open:nth-child(1) {
-      transform: translateY(10px) rotate(45deg);
+      transform: translateY(-10px) translateX(10px) rotate(270deg);
     }
 
     &.open:nth-child(2) {
@@ -52,7 +54,7 @@ display: block;
     }
 
     &.open:nth-child(3) {
-      transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(10px)  translateX(10px) rotate(-90deg);
     }
   }
 }

@@ -13,15 +13,14 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer-line"></div>
-{/*       <div className="footer-main">
-        <div className="footer-left">
+      <div className="footer-main">
+        {/*         <div className="footer-left">
           <h5 className="footer-title">
             <Icon css="icon" icon={faCode} /> WalDev
           </h5>
           <p>Diseñador web y desarrollador front-end con sede en Perú</p>
-        </div>
+        </div> */}
         <div className="footer-right">
-          <h5>Media</h5>
           <span className="footer-social-icons">
             <Link
               onClick={() =>
@@ -51,7 +50,7 @@ const Footer = () => {
             </Link>
           </span>
         </div>
-      </div> */}
+      </div>
       <span className="footer-derechos">Developed by Waldir Apaza</span>
     </div>
   );
