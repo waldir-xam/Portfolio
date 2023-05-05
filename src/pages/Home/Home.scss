@@ -195,6 +195,10 @@
           .light-theme & {
             color: $LM-Title;
           }
+          button {
+            margin: 0 auto;
+            margin-top: 3rem;
+          }
         }
       }
       .hero-phrase {
@@ -271,12 +275,13 @@
 .aboutme-home,
 .skills,
 .projects,
+.hobbies,
 .contact {
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column;  font-size: 1.1rem;
   @media (max-width: 599px) {
     padding: 2rem;
   }

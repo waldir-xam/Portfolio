@@ -1,10 +1,16 @@
 import React from "react";
 import fotowaldir from "../../img/fotowaldir.jpg";
 import { Link } from "react-router-dom";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import {
-  faAngleDoubleDown,
-} from "@fortawesome/free-solid-svg-icons";
-import { About, Aside, Contact, Icon, Projects, Skills } from "../../index";
+  About,
+  Aside,
+  Contact,
+  Hobbies,
+  Icon,
+  Projects,
+  Skills,
+} from "../../index";
 import Typewritter from "typewriter-effect";
 import "../Home/Home.scss";
 
@@ -39,9 +45,7 @@ const Home = () => {
                 />
               </h1>
 
-              <p>
-                Developing stuffs where tech meet craetivity.
-              </p>
+              <p>Developing stuffs where tech meet craetivity.</p>
               <button className="call2action" href="#contact">
                 Contact me! <Icon css="icon" icon={faAngleDoubleDown} />
               </button>
@@ -60,10 +64,20 @@ const Home = () => {
             <h6>If you can imagine it, you can program it.</h6>
             <span className="com2">"</span>
           </div>
-          <About />
-          <Skills />
-          <Projects />
-          <Contact />
+          <div>
+            <section id="about">
+              <About />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="hobbies">
+              <Hobbies />
+            </section>
+            <section id="contact">
+              <Contact />
+            </section>
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { Switch, Menu, MenuAside, MenuButton } from "../../../index";
+import { Switch, Menu, MenuButton } from "../../../index";
 import "../Header/Header.scss";
 
 const Header = () => {
@@ -49,15 +49,14 @@ const Header = () => {
       </Link>
       <div className="nav-right">
         {/* BOTON DARKMODE */}
-{/*         <Switch /> */}
+        {/*         <Switch /> */}
         {/* NAV PC */}
         <Menu handleLinkClick={handleLinkClick} />
         {/* BOTON MENU OFF CANVAS/ASIDE - CEL/TABLET  */}
         <MenuButton isOpen={isOpen} openMenu={openMenu} closeMenu={closeMenu} />
-        
-        
+
         {/* MENU RESPONSIVE/ASIDE */}
-{/*         <MenuAside
+        {/*         <MenuAside
           handleLinkClick={handleLinkClick}
           isOpen={isOpen}
           closeMenu={closeMenu}

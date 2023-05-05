@@ -42,152 +42,23 @@
       margin: 6rem 0;
     }
     @media (min-width: 600px) and (max-width: 991px) {
-      width: 100%;
+      width: 95%;
       padding: 0;
       flex-direction: column;
       gap: 3%;
+      justify-content: center;
+      align-items: center;
       margin: 10rem 0;
     }
     @media (min-width: 992px) and (max-width: 1199px) {
     }
     @media (min-width: 1200px) {
-      width: 100%;
-      flex-wrap: wrap;
-    }
-    /*     .proyect-box {
-      display: flex;
+      width: 85%;
       flex-direction: column;
-      border: solid 1px;
-      width: 100%;
-      &:hover {
-        border: solid 1px var(--color-primary);
-      }
-      // Media queries
-      @media (max-width: 599px) {
-      }
-
-      @media (min-width: 600px) and (max-width: 991px) {
-        width: 100%;
-        margin-top: 2.5rem;
-      }
-      @media (min-width: 992px) and (max-width: 1199px) {
-      }
-
-      @media (min-width: 1200px) {
-        width: 75%;
-      }
-      img {
-        // Media queries
-        @media (max-width: 599px) {
-        }
-
-        @media (min-width: 600px) and (max-width: 991px) {
-          height: auto;
-        }
-        @media (min-width: 992px) and (max-width: 1199px) {
-        }
-
-        @media (min-width: 1200px) {
-        }
-      }
-      .proyect-tools {
-        border: solid 1px;
-        padding: 0.5em;
-      }
-      .proyect-specs {
-        padding: 1em;
-        .proyect-title {
-          font-weight: var(--fw-4);
-          font-size: 1.3em;
-          margin-top: 0em;
-          .dark-theme {
-            color: var(--DM-Title);
-          }
-          .light-theme {
-            color: var(--LM-Title);
-          }
-        }
-        .proyect-container {
-          display: flex;
-          flex-direction: column;
-          .proyect-description {
-            height: 10vh;
-            margin: 0.8em 0 0.8em 0;
-            .dark-theme & {
-              color: var(--DM-Title);
-            }
-            .light-theme & {
-              color: var(--LM-Title);
-            }
-          }
-          .proyect-box-btns {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-top: 1.5em;
-            gap: 1em;
-            padding: 0.4em 1.1em 0.4em 1.1em;
-            background-color: transparent;
-            text-decoration: none;
-            a {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              gap: 0.5em;
-              text-decoration: none;
-              color: var(--DM-Title);
-            }
-            .dark-theme & {
-              color: var(--DM-Title);
-            }
-            .light-theme & {
-              color: var(--LM-Title);
-            }
-            .proyect-btn-live {
-              border: solid 1px var(--color-primary);
-              padding: 0.4em 1.1em 0.4em 1.1em;
-              background-color: transparent;
-              text-decoration: none;
-              .dark-theme & {
-                color: var(--DM-Title);
-              }
-              .light-theme & {
-                color: var(--LM-Title);
-              }
-              &:hover {
-                border: solid 1px var(--color-tertiary);
-                .dark-theme & {
-                  color: var(--DM-Title);
-                }
-                .light-theme & {
-                  color: var(--LM-Title);
-                }
-              }
-            }
-            .proyect-btn-repo {
-              border: solid 1px var(--DM-Title);
-              padding: 0.4em 1.1em 0.4em 1.1em;
-              background-color: transparent;
-              .dark-theme & {
-                color: var(--DM-Title);
-              }
-              .light-theme & {
-                color: var(--LM-Title);
-              }
-              &:hover {
-                border: solid 1px var(--color-primary);
-                .dark-theme & {
-                  color: var(--DM-Title);
-                }
-                .light-theme & {
-                  color: var(--LM-Title);
-                }
-              }
-            }
-          }
-        }
-      }
-    } */
+      justify-content: center;
+      margin: 0 auto;
+      gap: 1%;
+    }
     .project {
       position: relative;
       width: 45%;
@@ -222,8 +93,7 @@
         padding: 0;
         position: static;
         overflow: visible;
-        margin-bottom: 2rem;
-        margin: 1rem ;
+        margin: 0 auto;
 
         img {
           filter: none;

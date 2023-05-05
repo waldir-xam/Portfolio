@@ -19,21 +19,18 @@
 .sector {
   padding: 3rem 0;
   display: flex;
+  flex-direction: column;
   // Media queries
   @media (max-width: 599px) {
-    flex-direction: column;
   }
   @media (min-width: 600px) and (max-width: 991px) {
-    flex-direction: column;
-    display: flex;
     width: 100%;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
   }
   @media (min-width: 1200px) {
-    flex-direction: row;
   }
-  .aboutme-home-left {
+  .aboutme {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,9 +38,6 @@
       padding: 0.5em;
       width: 100%;
       text-align: justify;
-    }
-    button {
-      margin-left: 2em;
     }
     // Media queries
     @media (max-width: 599px) {
@@ -56,28 +50,7 @@
     @media (min-width: 992px) and (max-width: 1199px) {
     }
     @media (min-width: 1200px) {
-      width: 50%;
-    }
-  }
-  .aboutme-home-right {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 30em;
-    }
-    // Media queries
-    @media (max-width: 599px) {
-      margin-top: 3rem;
-    }
-
-    @media (min-width: 600px) and (max-width: 991px) {
       width: 100%;
-    }
-    @media (min-width: 992px) and (max-width: 1199px) {
-    }
-
-    @media (min-width: 1200px) {
-      width: 50%;
     }
   }
 }

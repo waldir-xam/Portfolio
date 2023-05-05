@@ -11,7 +11,7 @@ import "./Contact.scss";
 
 const Contact = () => {
   return (
-    <div className="contact" id="#contact">
+    <div className="contact">
       <div className="title-container">
         <h2>
           <span className="hashTag">#</span>contact

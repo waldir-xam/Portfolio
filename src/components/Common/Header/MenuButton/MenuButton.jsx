@@ -11,27 +11,48 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
     setOpen(!open);
   };
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    const fileUrl = "/public/cvWaldir.pdf"; // Reemplaza con la URL de tu archivo
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "resume.pdf"; // Nombre de archivo que se descargará
+    link.click();
+  };
+
   return (
     <>
       <div className={`overlay ${open ? "open" : ""}`} onClick={toggleMenu} />
       <div className={`menu ${open ? "open" : ""}`}>
         <ul>
           <li>
-            <Link to="/" onClick={closeMenu}>
+            <Link to="/" onClick={() => scrollToSection("about")}>
               <span className="hashTag">#</span>about
             </Link>
           </li>
           <li>
-            <Link to="/proyectos" onClick={closeMenu}>
+            <Link to="/" onClick={() => scrollToSection("projects")}>
               <span className="hashTag">#</span>projects
             </Link>
           </li>
           <li>
-            <Link to="/sobre-mi" onClick={closeMenu}>
+            <Link to="/" onClick={() => scrollToSection("hobbies")}>
               <span className="hashTag">#</span>hobbies
             </Link>
           </li>
-          <Link to="/" className="resume">
+          <li>
+            <Link to="/" onClick={() => scrollToSection("contact")}>
+              <span className="hashTag">#</span>contact
+            </Link>
+          </li>
+          <Link to="/" className="resume" onClick={handleResumeClick}>
             <span className="hashTag">#</span>resume
           </Link>
           <li>

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, AboutMe, Projects } from "../index";
+import { Home, About, Projects } from "../index";
 import Layout from "../components/Common/Layout/Layout";
 
 const Router = () => {
@@ -9,8 +9,6 @@ const Router = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
         </Routes>
       </Layout>
     </BrowserRouter>
