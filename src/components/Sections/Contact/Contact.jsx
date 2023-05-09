@@ -89,7 +89,7 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
             <ReCAPTCHA
-              sitekey="6LeR2_UlAAAAAMG1XERs1ZpI2I5rD3HeCUz3vN9n"
+              sitekey="6LeR2_UlAAAAADA3dSqKT5OYd9rU88tkdqsxPhuC"
               onChange={handleCaptchaVerify}
             />
 

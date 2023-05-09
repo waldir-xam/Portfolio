@@ -20,7 +20,7 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
 
   const handleResumeClick = (e) => {
     e.preventDefault();
-    const fileUrl = "/public/cvWaldir.pdf"; // Reemplaza con la URL de tu archivo
+    const fileUrl = "/public/files/cvWaldir.pdf"; // Reemplaza con la URL de tu archivo
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "Waldir_CV.pdf"; // Nombre de archivo que se descargará
