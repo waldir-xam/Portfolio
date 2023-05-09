@@ -23,7 +23,7 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
     const fileUrl = "/public/cvWaldir.pdf"; // Reemplaza con la URL de tu archivo
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "resume.pdf"; // Nombre de archivo que se descargará
+    link.download = "Waldir_CV.pdf"; // Nombre de archivo que se descargará
     link.click();
   };
 

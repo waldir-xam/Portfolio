@@ -23,6 +23,8 @@
   }
   .light-theme & {
     background-color: var(--BgLight);
+    border-bottom: 1.5px solid var(--LM-Title);
+
   }
   .logo-container {
     display: flex;

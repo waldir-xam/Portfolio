@@ -1,15 +1,34 @@
 import React from "react";
 import { Icon } from "../../../index";
-import { Link } from "react-router-dom";
-import {
-  faDiscord,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import "./Contact.scss";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isCaptchaVerified) {
+      const formData = new FormData(event.target);
+      fetch("/enviar.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          // Agregue aquí cualquier código que necesite después de enviar el formulario
+        })
+        .catch((error) => console.error(error));
+    } else {
+      alert("Por favor, verifique el captcha");
+    }
+  };
+
   return (
     <div className="contact">
       <div className="title-container">
@@ -22,54 +41,45 @@ const Contact = () => {
         <div className="contact-left">
           <div className="contact-left-content">
             <p>
-            I am interested in opportunities, and collaborate on projects, if you have any request or question, do not hesitate to contact me.
+              I am interested in opportunities, and collaborate on projects, if
+              you have any request or question, do not hesitate to contact me.
             </p>
-            {/*             <div className="contact-mini-box">
-              <h6>Tambien puedes escribirme un mensaje aqui:</h6>
-              <ul>
-                <li>
-                  <Link
-                    onClick={() =>
-                      window.open("https://github.com/waldir-xam", "_blank")
-                    }
-                  >
-                    <Icon css="icon" icon={faGithub} /> waldir-xam
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() =>
-                      window.open(
-                        "http://www.discordapp.com/users/597457139736510505",
-                        "_blank"
-                      )
-                    }
-                  >
-                    <Icon css="icon" icon={faDiscord} /> ratatrampa#7994
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    onClick={() =>
-                      window.open(
-                        "https://www.linkedin.com/in/waldirxam/",
-                        "_blank"
-                      )
-                    }
-                  >
-                    <Icon css="icon" icon={faLinkedin} /> waldirxam
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
           </div>
         </div>
         <div className="contact-right">
-          <form className="contact-right-form">
-            <input type="text" placeholder="Name" id="name" />
-            <input type="text" placeholder="Email" id="email" />
-            <input type="text" placeholder="Subject" id="subject" />
-            <textarea type="text" placeholder="Write a message" id="message" />
+          <form className="contact-right-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Name"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              id="subject"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+            <textarea
+              placeholder="Write a message"
+              id="message"
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            {/* Agregue aquí su código de captcha */}
             <button type="submit" className="input-send">
               Send <Icon css="icon" icon={faPaperPlane} />
             </button>

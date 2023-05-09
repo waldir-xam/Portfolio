@@ -13,6 +13,7 @@
   }
   .light-theme & {
     color: $LM-Title;
+    background-image: none;
   }
   .home-second-container {
     max-width: 90%;
@@ -141,6 +142,8 @@
           }
           @media (min-width: 992px) and (max-width: 1199px) {
             padding: 1rem;
+            align-items: left;
+            align-items: flex-start;
           }
           @media (min-width: 1200px) {
             justify-content: center;
@@ -158,6 +161,7 @@
             @media (min-width: 600px) and (max-width: 991px) {
             }
             @media (min-width: 992px) and (max-width: 1199px) {
+              text-align: left;
             }
             @media (min-width: 1200px) {
               text-align: left;
@@ -195,9 +199,44 @@
           .light-theme & {
             color: $LM-Title;
           }
-          button {
-            margin: 0 auto;
-            margin-top: 3rem;
+          .contactme-btn {
+            border: solid 1px;
+            margin-top: 2em;
+            padding: 10px 5px 10px 5px;
+            width: 10em;
+            background-color: transparent;
+            cursor: pointer;
+            .dark-theme & {
+              color: $DM-Title;
+            }
+            .light-theme & {
+              border: $LM-Title 1.5px solid;
+              background-color: $primary-color;
+              font-weight: var(--fw-4);
+            }
+            &:hover {
+              font-weight: var(--fw-5);
+              transition: 0.3s ease;
+              color: var(--color-primary);
+              cursor: pointer;
+            }
+            *:hover {
+              transition: 0.3s ease;
+            }
+
+
+            @media (max-width: 599px) {
+              margin: 0 auto;
+              margin-top: 3rem;
+            }
+            @media (min-width: 600px) and (max-width: 991px) {
+            }
+            @media (min-width: 992px) and (max-width: 1199px) {
+              margin-top: 2rem;
+              position: relative;
+            }
+            @media (min-width: 1200px) {
+            }
           }
         }
       }
@@ -281,7 +320,8 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  flex-direction: column;  font-size: 1.1rem;
+  flex-direction: column;
+  font-size: 1.1rem;
   @media (max-width: 599px) {
     padding: 2rem;
   }

@@ -15,6 +15,12 @@ import Typewritter from "typewriter-effect";
 import "../Home/Home.scss";
 
 const Home = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="home-container">
       <div className="home-second-container">
@@ -45,8 +51,11 @@ const Home = () => {
                 />
               </h1>
 
-              <p>Developing stuffs where tech meet craetivity.</p>
-              <button className="call2action" href="#contact">
+              <p>Developing stuffs where tech meet creativity.</p>
+              <button
+                className="contactme-btn"
+                onClick={() => scrollToSection("contact")}
+              >
                 Contact me! <Icon css="icon" icon={faAngleDoubleDown} />
               </button>
             </div>
