@@ -1,6 +1,7 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Icon } from "../../../index";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import ReCAPTCHA from "react-google-recaptcha";
 import "./Contact.scss";
 
 const Contact = () => {
@@ -9,6 +10,10 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+
+  const handleCaptchaVerify = () => {
+    setIsCaptchaVerified(true);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +31,10 @@ const Contact = () => {
         .catch((error) => console.error(error));
     } else {
       alert("Por favor, verifique el captcha");
+    }
+
+    function onChange(value) {
+      console.log("Captcha value:", value);
     }
   };
 
@@ -79,7 +88,11 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            {/* Agregue aquí su código de captcha */}
+            <ReCAPTCHA
+              sitekey="6LeR2_UlAAAAAMG1XERs1ZpI2I5rD3HeCUz3vN9n"
+              onChange={handleCaptchaVerify}
+            />
+
             <button type="submit" className="input-send">
               Send <Icon css="icon" icon={faPaperPlane} />
             </button>
