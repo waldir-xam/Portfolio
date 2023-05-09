@@ -30,12 +30,11 @@ const Contact = () => {
         })
         .catch((error) => console.error(error));
     } else {
-      alert("Por favor, verifique el captcha");
+      alert("Please, verify catpcha");
     }
-
-    function onChange(value) {
-      console.log("Captcha value:", value);
-    }
+  };
+  const handleChange = (value) => {
+    console.log("Captcha value:", value);
   };
 
   return (
@@ -88,14 +87,15 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <ReCAPTCHA
-              sitekey="6LeR2_UlAAAAADA3dSqKT5OYd9rU88tkdqsxPhuC"
-              onChange={handleCaptchaVerify}
-            />
 
             <button type="submit" className="input-send">
               Send <Icon css="icon" icon={faPaperPlane} />
             </button>
+            <br />
+            <ReCAPTCHA
+              sitekey="6LdTKvYlAAAAAKj18lwzU0bYzXUi_91fIvdW6vGa"
+              onChange={handleChange}
+            />
           </form>
         </div>
       </div>

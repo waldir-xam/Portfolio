@@ -14,6 +14,7 @@
       width: 100%;
     }
     @media (min-width: 992px) and (max-width: 1199px) {
+      flex-direction: column;
     }
     @media (min-width: 1200px) {
     }
@@ -36,33 +37,7 @@
       .contact-left-content {
         display: flex;
         flex-direction: column;
-        text-align:justify;
-        /*         .contact-mini-box {
-          width: 65%;
-          border: solid 1px;
-          padding: var(--padding-1);
-          margin-top: 1.5em;
-          h6 {
-            font-weight: var(--fw-4);
-            color: var(--DM-Title);
-          }
-          ul li {
-            margin-top: 0.5em;
-            list-style: none;
-            a {
-              text-decoration: none;
-              .dark-theme & {
-                color: $DM-Title;
-              }
-              .light-theme & {
-                color: $LM-Title;
-              }
-              &:hover {
-                color: $primary-color;
-              }
-            }
-          }
-        } */
+        text-align: justify;
       }
     }
     .contact-right {

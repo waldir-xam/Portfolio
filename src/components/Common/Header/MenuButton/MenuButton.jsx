@@ -42,11 +42,11 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
               <span className="hashTag">#</span>projects
             </Link>
           </li>
-          <li>
+{/*           <li>
             <Link to="/" onClick={() => scrollToSection("hobbies")}>
               <span className="hashTag">#</span>hobbies
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/" onClick={() => scrollToSection("contact")}>
               <span className="hashTag">#</span>contact
