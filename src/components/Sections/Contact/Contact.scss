@@ -63,11 +63,12 @@
         input,
         textarea,
         button {
-          padding: 0.35rem;
+          padding: 0.5rem;
           align-items: center;
           justify-content: center;
           border-radius: 0.5rem;
           margin-top: 1.2rem;
+          border: 0.5rem;
         }
         @media (max-width: 599px) {
         }
@@ -106,4 +107,8 @@
       }
     }
   }
+}
+.recaptcha {
+  margin: 0 auto;
+  padding: 2rem 0;
 }

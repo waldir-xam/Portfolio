@@ -10,6 +10,7 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleCaptchaVerify = () => {
     setIsCaptchaVerified(true);
@@ -18,6 +19,7 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isCaptchaVerified) {
+      setIsSending(true); // Actualizar estado para comenzar la animación del botón
       const formData = new FormData(event.target);
       fetch("/enviar.php", {
         method: "POST",
@@ -28,7 +30,13 @@ const Contact = () => {
           console.log(data);
           // Agregue aquí cualquier código que necesite después de enviar el formulario
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
+        .finally(() => {
+          // Después de unos segundos, restablecer el estado del botón
+          setTimeout(() => {
+            setIsSending(false);
+          }, 3000);
+        });
     } else {
       alert("Please, verify catpcha");
     }
@@ -91,11 +99,13 @@ const Contact = () => {
             <button type="submit" className="input-send">
               Send <Icon css="icon" icon={faPaperPlane} />
             </button>
-            <br />
-            <ReCAPTCHA
-              sitekey="6LdTKvYlAAAAAKj18lwzU0bYzXUi_91fIvdW6vGa"
-              onChange={handleChange}
-            />
+
+            <div className="recaptcha">
+              <ReCAPTCHA
+                sitekey="6LdTKvYlAAAAAKj18lwzU0bYzXUi_91fIvdW6vGa"
+                onChange={handleChange}
+              />
+            </div>
           </form>
         </div>
       </div>
