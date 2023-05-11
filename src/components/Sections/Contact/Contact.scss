@@ -37,7 +37,7 @@
       .contact-left-content {
         display: flex;
         flex-direction: column;
-        text-align: justify;
+        text-align: left;
       }
     }
     .contact-right {
@@ -69,6 +69,17 @@
           border-radius: 0.5rem;
           margin-top: 1.2rem;
           border: 0.5rem;
+          .dark-theme & {
+            color: $DM-Title;
+            border: 0.1rem solid $primary-color;
+            background-color: $BgDark;
+          }
+          .light-theme & {
+            color: $DM-Title;
+            border: 0.1rem solid $primary-color;
+            background-color: rgb(68, 68, 68);
+
+          }
         }
         @media (max-width: 599px) {
         }
@@ -81,6 +92,10 @@
         }
         @media (min-width: 1200px) {
           width: 86%;
+        }
+        .recaptcha {
+          margin: 0 auto;
+          padding: 2rem 0;
         }
         .input-send {
           color: $LM-Title;
@@ -107,8 +122,4 @@
       }
     }
   }
-}
-.recaptcha {
-  margin: 0 auto;
-  padding: 2rem 0;
 }

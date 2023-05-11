@@ -5,8 +5,8 @@
     "image": "/images/proy1.png",
     "description": "Buscador de usuarios de github, da info,detalles y repos del usuario buscado",
     "skills": ["React", "CSS", "MUI"],
-    "websiteLink": "https://vercel.com",
-    "githubLink": "https://github.com"
+    "websiteLink": "https://github-searcher-2-0.vercel.app/",
+    "githubLink": "https://github.com/waldir-xam/github-searcher-2.0"
   },
   {
     "id": "1",
