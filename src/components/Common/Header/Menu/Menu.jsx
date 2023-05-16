@@ -14,10 +14,10 @@ const Menu = ({}) => {
 
   const handleResumeClick = (e) => {
     e.preventDefault();
-    const fileUrl = "/public/files/cvWaldir.pdf"; // Reemplaza con la URL de tu archivo
+    const fileUrl = "/public/files/CV-WALDIR-BN-ESP.pdf"; // Reemplaza con la URL de tu archivo
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "resume.pdf"; // Nombre de archivo que se descargará
+    link.download = "CV-WALDIR-ESP.pdf"; // Nombre de archivo que se descargará
     link.click();
   };
 
