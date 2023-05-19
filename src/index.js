@@ -10,6 +10,7 @@ export { default as About } from './components/Sections/About/About';
 export { default as Caruousel } from './components/Sections/About/Caruousel';
 export { default as Aside } from './components/Sections/Aside/Aside';
 export { default as Contact } from './components/Sections/Contact/Contact';
+export { default as ContactForm } from './components/Sections/Contact/ContactForm';
 export { default as Hobbies } from './components/Sections/Hobbies/Hobbies';
 export { default as Projects } from './components/Sections/Projects/Projects';
 export { default as Skills } from './components/Sections/Skills/Skills';
