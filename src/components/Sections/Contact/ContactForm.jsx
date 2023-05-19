@@ -20,9 +20,9 @@ const ContactForm = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => {
+      .then((response) => {
         console.log("Form successfully submitted");
-        return response.json();
+        return response.text(); // Leer la respuesta como texto en lugar de JSON
       })
       .then((data) => {
         console.log(data);
