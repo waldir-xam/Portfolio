@@ -47,7 +47,6 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       name="contact"
       data-netlify="true"
-      data-netlify-recaptcha="true"
     >
       <input
         type="hidden"
