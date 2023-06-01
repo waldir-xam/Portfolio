@@ -22,16 +22,25 @@
     "title": "Rick & Morty",
     "image": "/images/proy2.png",
     "description": "App usando la API fake de Rick & Morty",
-    "skills": ["React", "CSS", "MUI"],
-    "websiteLink": "https://vercel.com",
-    "githubLink": "https://github.com"
+    "skills": ["Javascript", "Bootstrap"],
+    "websiteLink": "https://rick-y-morty-api-phi.vercel.app/",
+    "githubLink": "https://github.com/waldir-xam/Rick-y-Morty-API"
   },
   {
     "id": "3",
-    "title": "Another Proyect",
-    "image": "/images/proy2.png",
+    "title": "Task List/To do ",
+    "image": "/images/proy3.png",
     "description": "More projects in progress...",
-    "skills": ["React", "CSS", "MUI"],
+    "skills": ["React", "Tailwind", "Redux"],
+    "websiteLink": "https://react-crud-todo-phi.vercel.app/",
+    "githubLink": "https://github.com/waldir-xam/react-crud-todo"
+  },
+  {
+    "id": "4",
+    "title": "Another Proyect",
+    "image": "/images/proymore.png",
+    "description": "More projects in progress...",
+    "skills": ["React", "CSS", "MUI", "MERN", "SQL", "..."],
     "websiteLink": "https://vercel.com",
     "githubLink": "https://github.com"
   }

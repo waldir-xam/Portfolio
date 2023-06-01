@@ -14,6 +14,8 @@ export { default as ContactForm } from './components/Sections/Contact/ContactFor
 export { default as Hobbies } from './components/Sections/Hobbies/Hobbies';
 export { default as Projects } from './components/Sections/Projects/Projects';
 export { default as Skills } from './components/Sections/Skills/Skills';
+export * from './helpers/helpHttp';
+export * from './hooks/useForm';
 export * from './index';
 export * from './main';
 export { default as AboutMe } from './pages/Aboutme/AboutMe';
