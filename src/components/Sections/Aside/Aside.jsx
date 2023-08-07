@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { Icon } from "../../../index";
-import "./Aside.scss"
+import "./Aside.scss";
 
 const Aside = () => {
   return (

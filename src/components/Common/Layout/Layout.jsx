@@ -22,5 +22,5 @@ const Layout = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
+ 
 export default Layout;
