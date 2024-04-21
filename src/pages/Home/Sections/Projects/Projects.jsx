@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "../../../index";
-import projects from "../../../Content/projects.json";
+import { Icon } from "../../../../index";
+import projects from "../../../../Content/projects.json";
 import "./Projects.scss";
 
 const Proyects = () => {

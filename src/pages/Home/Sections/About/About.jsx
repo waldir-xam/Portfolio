@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import imgOne from "../../../img/img1.png";
-import { Link } from "react-router-dom";
-import { Caruousel, Icon } from "../../../index";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import { Caruousel } from "../../../../index";
 import "./About.scss";
 
 const About = () => {

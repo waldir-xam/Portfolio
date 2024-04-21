@@ -1,6 +1,4 @@
 import React from "react";
-import skillsLeft from "../../../img/skills2.jpg";
-import { Link } from "react-router-dom";
 import {
   faBookOpen,
   faCode,
@@ -8,7 +6,7 @@ import {
   faFileCode,
   faGears,
 } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "../../../index";
+import { Icon } from "../../../../index.js";
 import "./Skills.scss"
 
 const Skills = () => {

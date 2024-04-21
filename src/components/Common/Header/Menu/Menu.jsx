@@ -12,14 +12,19 @@ const Menu = ({}) => {
     }
   };
 
-  const handleResumeClick = (e) => {
+/*   const handleResumeClick = (e) => {
     e.preventDefault();
     const fileUrl = "/files/CV-WALDIR-BN-ESP.pdf"; // Reemplaza con la URL de tu archivo
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "CV-WALDIR-ESP.pdf"; // Nombre de archivo que se descargará
     link.click();
-  };
+  }; */
+  const languageLinks = [
+    { text: 'EN', link: '/home-eng', onClick: () => scrollToSection('') },
+    { text: 'ES', link: '/home-esp', onClick: () => scrollToSection('acerca-de'), isHidden: true },
+  ];
+  
 
   return (
     <nav className="menu-header">
@@ -37,19 +42,16 @@ const Menu = ({}) => {
             <span className="hashTag">#</span>projects
           </Link>
         </li>
-{/*         <li>
-          <Link to="/" onClick={() => scrollToSection("hobbies")}>
-            <span className="hashTag">#</span>hobbies
-          </Link>
-        </li> */}
         <li>
           <Link to="/" onClick={() => scrollToSection("contact")}>
             <span className="hashTag">#</span>contact
           </Link>
         </li>
-        <Link to="/" className="resume" onClick={handleResumeClick}>
-          <span className="hashTag">#</span>resume
-        </Link>
+        <li>
+          <Link to="/" onClick={() => scrollToSection("contact")}>
+            <span className="hashTag">#</span>es
+          </Link>
+        </li>
       </ul>
     </nav>
   );

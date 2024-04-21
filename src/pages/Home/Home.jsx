@@ -1,18 +1,14 @@
 import React from "react";
 import fotowaldir from "../../img/fotowaldir.jpg";
 import { Link } from "react-router-dom";
-import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import {
-  About,
-  Aside,
-  Contact,
-  Hobbies,
-  Icon,
-  Projects,
-  Skills,
-} from "../../index";
-import Typewritter from "typewriter-effect";
+  faAngleDoubleDown,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import { About, Icon, Projects } from "../../index";
 import "../Home/Home.scss";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Experience from "./Sections/Experience/Experience";
 
 const Home = () => {
   const scrollToSection = (id) => {
@@ -25,70 +21,45 @@ const Home = () => {
     <div className="home-container">
       <div className="home-second-container">
         <div className="home-content">
-          <div className="hero">
-            <div className="hero-container">
-              <div className="hero-left">
-                <h1>
-                  Hi! I'm <span className="hashTag">Waldir Apaza </span>
-                  <br />
-                  <Typewritter
-                    onInit={(typewriter) => {
-                      typewriter
-                        .typeString("Frontend Dev")
-                        .pauseFor(750)
-                        .deleteAll(50)
-                        .typeString("Freelancer")
-                        .pauseFor(750)
-                        .deleteAll(50)
-                        .start();
-                    }}
-                    options={{
-                      autoStart: true,
-                      loop: true,
-                    }}
-                  />
-                </h1>
-
-                <p>Developing stuffs where tech meet creativity.</p>
+          <div className="hero-container">
+            <div className="hero-left">
+              <h1>
+                Hi! I'm <span className="hashTag">Waldir Apaza </span>
+              </h1>
+              {/* prettier-ignore */}
+              <p>
+                +3 años de experiencia. <span className="hashTag">Desarrollador Web Full Stack</span> con una sólida formación en <span className="hashTag">desarrollo de software y gestión de proyectos.
+                </span>
+              </p>
+              <div className="social-buttons">
                 <button
-                  className="contactme-btn"
-                  onClick={() => scrollToSection("contact")}
+                  className="social-btn"
+                  onClick={() => scrollToSection("")}
                 >
-                  Contact me! <Icon css="icon" icon={faAngleDoubleDown} />
+                  <Icon css="icon" icon={faEnvelope} /> Contactame
+                </button>
+                <button
+                  className="social-btn"
+                  onClick={() => scrollToSection("")}
+                >
+                  <Icon css="icon" icon={faLinkedin} /> LinkedIn
                 </button>
               </div>
-              <div className="hero-right">
-                <img src={fotowaldir} alt="profile pic" />
-                {/*           <span className="status">
-            <div className="square-status"></div>
-            Actualmente trabajando como<span> Freelance</span>
-          </span> */}
-              </div>
             </div>
-            <div className="scroll-container">
-              <div className="scroll-inside">
-                <div className="scroll-inside-animate"></div>
-              </div>
+            <div className="hero-right">
+              <img src={fotowaldir} alt="profile pic" />
+              <div className="status">Disponible para trabajar</div>
             </div>
-          </div>
-          {/* FRASE*/}
-          <div className="hero-phrase">
-            <span className="com1">"</span>
-            <h6>If you can imagine it, you can program it.</h6>
-            <span className="com2">"</span>
           </div>
           <div>
-            <section id="about">
-              <About />
+            <section id="experience">
+              <Experience />
             </section>
             <section id="projects">
               <Projects />
             </section>
-{/*             <section id="hobbies">
-              <Hobbies />
-            </section> */}
-            <section id="contact">
-              <Contact />
+            <section id="about">
+              <About />
             </section>
           </div>
         </div>

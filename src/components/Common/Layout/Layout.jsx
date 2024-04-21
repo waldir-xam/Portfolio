@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Header, Footer, Aside } from "../../../index";
+import { Header, Footer } from "../../../index";
 import { ThemeContext } from "../../../index";
-import "./Layout.css";
+import "./Layout.scss";
 
 const Layout = ({ children }) => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -15,7 +15,6 @@ const Layout = ({ children }) => {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={`App ${theme}-theme`}>
         <Header />
-        <Aside/>
         {children}
         <Footer />
       </div>

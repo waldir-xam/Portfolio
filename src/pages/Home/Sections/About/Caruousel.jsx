@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Carousel.scss";
-import logos from "../../../Content/logos.json";
+import logos from "../../../../Content/logos.json";
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);

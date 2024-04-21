@@ -34,14 +34,5 @@
     "skills": ["React", "Tailwind", "Redux"],
     "websiteLink": "https://react-crud-todo-phi.vercel.app/",
     "githubLink": "https://github.com/waldir-xam/react-crud-todo"
-  },
-  {
-    "id": "4",
-    "title": "Another Proyect",
-    "image": "/images/proymore.png",
-    "description": "More projects in progress...",
-    "skills": ["React", "CSS", "MUI", "MERN", "SQL", "..."],
-    "websiteLink": "https://vercel.com",
-    "githubLink": "https://github.com"
   }
 ]

@@ -44,7 +44,7 @@ const Header = () => {
           <span className="logo-icon">
             <Icon className="" css="icon" icon={faCode} />
           </span>
-          <span className="logo-text">walDev</span>
+          <span className="logo-text">wallydev</span>
         </div>
       </Link>
       <div className="nav-right">
