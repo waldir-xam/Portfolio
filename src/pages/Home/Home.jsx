@@ -26,9 +26,12 @@ const Home = () => {
               <h1>
                 Hi! I'm <span className="hashTag">Waldir Apaza </span>
               </h1>
-              {/* prettier-ignore */}
               <p>
-                +3 años de experiencia. <span className="hashTag">Desarrollador Web Full Stack</span> con una sólida formación en <span className="hashTag">desarrollo de software y gestión de proyectos.
+                +3 años de experiencia.
+                <span className="hashTag">Desarrollador Web Full Stack</span>
+                con una sólida formación en
+                <span className="hashTag">
+                  desarrollo de software y gestión de proyectos.
                 </span>
               </p>
               <div className="social-buttons">
