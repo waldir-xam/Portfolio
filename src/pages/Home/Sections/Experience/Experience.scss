@@ -18,7 +18,7 @@
 
       .timeline-content {
         position: relative;
-        margin: 0 3rem;
+        margin-left: 3rem;
 
 
         ::before.timeline-title {
@@ -41,10 +41,12 @@
             top: 0;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: .5rem;
-            
+            grid-gap: 5rem;
+
             @media (max-width: 599px) {
-              grid-gap: .25rem;
+              grid-gap: 1rem;
+              grid-template-columns: 1fr;
+
             }
 
             .one {
@@ -74,7 +76,6 @@
               left: -42px;
               position: absolute;
               border-radius: 100%;
-
             }
 
             .h3,
@@ -127,7 +128,7 @@
         background-color: $primary-color;
         top: 15px;
         border-radius: 50%;
-        z-index: 1;
+        z-index: 2;
       }
     }
 
