@@ -45,7 +45,7 @@
       width: 100%;
       flex-direction: column;
       gap: 1%;
-      margin: 4rem 0;
+      margin: 2rem 0;
     }
 
     @media (min-width: 600px) and (max-width: 991px) {
@@ -243,6 +243,7 @@
           flex-direction: row;
           gap: 4%;
 
+
           @media (max-width: 599px) {
             margin-left: 0.4rem;
           }
@@ -258,8 +259,15 @@
 
           a {
             color: $DM-Title;
-            font-size: 1.25rem;
             font-weight: 700;
+            text-decoration: none;
+            font-size: .85rem;
+
+/*             border: 1px solid red;
+            border-radius: 2rem;
+            padding: .25rem .5rem; */
+
+
 
             .light-theme & {
               color: $LM-Title;

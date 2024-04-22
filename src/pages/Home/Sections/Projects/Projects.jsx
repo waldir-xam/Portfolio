@@ -34,10 +34,10 @@ const Proyects = () => {
                 <Link
                   onClick={() => window.open(project.websiteLink, "_blank")}
                 >
-                  <Icon css="icon" icon={faExternalLink} />
+                  Preview <Icon css="icon" icon={faExternalLink} />
                 </Link>
                 <Link onClick={() => window.open(project.githubLink, "_blank")}>
-                  <Icon css="icon" icon={faGithub} />
+                  Code <Icon css="icon" icon={faGithub} />
                 </Link>
               </div>
             </div>

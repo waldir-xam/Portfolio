@@ -1,7 +1,14 @@
+import React, { useState } from "react";
 import "./Experience.scss";
 import experiences from "../../../../Content/experiences.json";
 
 const Experience = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <div className="experience">
       <div className="title-container">
@@ -24,8 +31,22 @@ const Experience = () => {
                   </div>
                   <div className="two">
                     <p className="timeline-description">
-                      {experience.description.responsibilities}
-                      {experience.description.achievements}
+                      {showMore ||
+                      experience.description.responsibilities.split(" ")
+                        .length <= 30
+                        ? experience.description.responsibilities
+                        : `${experience.description.responsibilities
+                            .split(" ")
+                            .slice(0, 30)
+                            .join(" ")}...`}
+                      {experience.description.responsibilities.split(" ")
+                        .length > 30 && (
+                        <button onClick={toggleShowMore}>
+                          {showMore ? "Ver menos" : "Saber más >"}
+                        </button>
+                      )}
+                      {/*                       {experience.description.achievements}
+                       */}{" "}
                     </p>
                   </div>
                 </div>
