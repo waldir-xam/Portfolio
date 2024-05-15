@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "../../../../index";
-import fotowaldir from "../../../../img/fotowaldir.jpg";
+import fotowaldir from "../../../../../public/images/fotowaldir.jpg";
 import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";

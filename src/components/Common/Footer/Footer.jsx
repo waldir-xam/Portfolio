@@ -14,12 +14,6 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-line"></div>
       <div className="footer-main">
-        {/*         <div className="footer-left">
-          <h5 className="footer-title">
-            <Icon css="icon" icon={faCode} /> WalDev
-          </h5>
-          <p>Diseñador web y desarrollador front-end con sede en Perú</p>
-        </div> */}
         <div className="footer-right">
           <span className="footer-social-icons">
             <Link
