@@ -26,10 +26,10 @@
     transition: top 0.3s ease-in-out;
     border-radius: 1.25rem;
     margin-top: 2px;
+    z-index: 50;
 
     .dark-theme & {
       background-color: var(--BgDark);
-      border: 1px solid $primary-color;
     }
 
     .light-theme & {
