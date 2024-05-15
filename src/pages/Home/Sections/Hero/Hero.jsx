@@ -1,11 +1,9 @@
-import React from "react";
 import { Icon } from "../../../../index";
-import fotowaldir from "../../../../../public/images/fotowaldir.jpg";
-import {
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import fotowaldir from "../../../../../public/images/fotowaldir.jpg";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import "./Hero.scss"
 
 const Hero = () => {
   return (
@@ -26,10 +24,13 @@ const Hero = () => {
           <Link to="mailto:waliuxd@gmail.com" className="social-btn">
             <Icon css="icon" icon={faEnvelope} /> Contactame
           </Link>
-          <Link to="https://www.linkedin.com/in/waldirxam/" className="social-btn" target="_blank">
+          <Link
+            to="https://www.linkedin.com/in/waldirxam/"
+            className="social-btn"
+            target="_blank"
+          >
             <Icon css="icon" icon={faLinkedin} /> LinkedIn
           </Link>
-
         </div>
       </div>
       <div className="hero-right">

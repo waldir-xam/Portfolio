@@ -1,7 +1,5 @@
-import React from "react";
 import "./Experience.scss";
 import { useState } from "react";
-
 import { experience } from "../../../../Content/experience.js";
 
 export default function ListExperience() {

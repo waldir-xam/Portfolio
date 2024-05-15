@@ -7,7 +7,6 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -23,7 +22,6 @@ const Footer = () => {
             >
               <Icon css="icon" icon={faGithub} />
             </Link>
-
             <Link
               onClick={() =>
                 window.open(
@@ -34,7 +32,6 @@ const Footer = () => {
             >
               <Icon css="icon" icon={faDiscord} />
             </Link>
-
             <Link
               onClick={() =>
                 window.open("https://www.linkedin.com/in/waldirxam/", "_blank")
