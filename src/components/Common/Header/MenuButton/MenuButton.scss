@@ -19,6 +19,8 @@ $primary-color: #ff8906;
 
   @media (max-width: 599px) {
     display: block;
+    z-index: 20;
+
   }
   @media (min-width: 600px) and (max-width: 991px) {
     display: block;

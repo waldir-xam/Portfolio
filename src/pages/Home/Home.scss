@@ -26,6 +26,8 @@
     @media (max-width: 599px) {
       padding-left: 0rem;
       max-width: 100%;
+      
+
     }
 
     @media (min-width: 600px) and (max-width: 991px) {
@@ -241,7 +243,7 @@
 
             .social-btn {
               border: solid 0.12rem;
-              border-radius: 2rem;
+              border-radius: 1.25rem;
               padding: .35rem 1rem;
               background-color: transparent;
               cursor: pointer;
@@ -249,6 +251,8 @@
               justify-content: center;
               align-items: center;
               gap: 5%;
+              text-decoration: none;
+              font-weight: var(--fw-4);
 
 
               .dark-theme & {
@@ -256,16 +260,25 @@
               }
 
               .light-theme & {
-                border: $LM-Title 1.5px solid;
-                background-color: $primary-color;
-                font-weight: var(--fw-4);
+                color: $LM-Title;
+
               }
 
               &:hover {
-                font-weight: var(--fw-5);
                 transition: 0.3s ease;
-                color: var(--color-primary);
                 cursor: pointer;
+
+                .dark-theme & {
+                  color: var(--color-primary);
+
+                }
+
+                .light-theme & {
+                  color: var(--color-primary);
+                  border: var(--color-primary) solid 0.12rem;
+
+
+                }
               }
 
               *:hover {

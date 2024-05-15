@@ -35,33 +35,25 @@ const Header = () => {
   };
 
   return (
-    <header
-      className="header-container"
-      style={{ top: visible ? "0" : "-100px" }}
-    >
-      <Link to="/" className="link-to">
-        <div className="logo-container">
-          <span className="logo-icon">
-            <Icon className="" css="icon" icon={faCode} />
-          </span>
-          <span className="logo-text">wallydev</span>
+    <header className="header-container">
+      <nav className="nav-container" style={{ top: visible ? "0" : "-100px" }}>
+        <Link to="/" className="link-to">
+          <div className="logo-container">
+            <span className="logo-icon">
+              <Icon className="" css="icon" icon={faCode} />
+            </span>
+            <span className="logo-text">wallydev</span>
+          </div>
+        </Link>
+        <div className="nav-right">
+          <Menu handleLinkClick={handleLinkClick} />
+          <MenuButton
+            isOpen={isOpen}
+            openMenu={openMenu}
+            closeMenu={closeMenu}
+          />
         </div>
-      </Link>
-      <div className="nav-right">
-        {/* BOTON DARKMODE */}
-        {/*         <Switch /> */}
-        {/* NAV PC */}
-        <Menu handleLinkClick={handleLinkClick} />
-        {/* BOTON MENU OFF CANVAS/ASIDE - CEL/TABLET  */}
-        <MenuButton isOpen={isOpen} openMenu={openMenu} closeMenu={closeMenu} />
-
-        {/* MENU RESPONSIVE/ASIDE */}
-        {/*         <MenuAside
-          handleLinkClick={handleLinkClick}
-          isOpen={isOpen}
-          closeMenu={closeMenu}
-        /> */}
-      </div>
+      </nav>
     </header>
   );
 };

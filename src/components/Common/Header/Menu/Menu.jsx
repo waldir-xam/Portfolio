@@ -12,7 +12,7 @@ const Menu = ({}) => {
     }
   };
 
-/*   const handleResumeClick = (e) => {
+  /*   const handleResumeClick = (e) => {
     e.preventDefault();
     const fileUrl = "/files/CV-WALDIR-BN-ESP.pdf"; // Reemplaza con la URL de tu archivo
     const link = document.createElement("a");
@@ -21,10 +21,14 @@ const Menu = ({}) => {
     link.click();
   }; */
   const languageLinks = [
-    { text: 'EN', link: '/home-eng', onClick: () => scrollToSection('') },
-    { text: 'ES', link: '/home-esp', onClick: () => scrollToSection('acerca-de'), isHidden: true },
+    { text: "EN", link: "/home-eng", onClick: () => scrollToSection("") },
+    {
+      text: "ES",
+      link: "/home-esp",
+      onClick: () => scrollToSection("acerca-de"),
+      isHidden: true,
+    },
   ];
-  
 
   return (
     <nav className="menu-header">
@@ -33,8 +37,8 @@ const Menu = ({}) => {
           <Switch />
         </li>
         <li>
-          <Link to="/" onClick={() => scrollToSection("about")}>
-            <span className="hashTag">#</span>about
+          <Link to="/" onClick={() => scrollToSection("experience")}>
+            <span className="hashTag">#</span>experience
           </Link>
         </li>
         <li>
@@ -43,13 +47,8 @@ const Menu = ({}) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => scrollToSection("contact")}>
-            <span className="hashTag">#</span>contact
-          </Link>
-        </li>
-        <li>
-          <Link to="/" onClick={() => scrollToSection("contact")}>
-            <span className="hashTag">#</span>es
+          <Link to="/" onClick={() => scrollToSection("about")}>
+            <span className="hashTag">#</span>about
           </Link>
         </li>
       </ul>

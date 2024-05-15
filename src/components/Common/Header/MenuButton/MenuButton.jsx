@@ -18,14 +18,6 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
     }
   };
 
-  const handleResumeClick = (e) => {
-    e.preventDefault();
-    const fileUrl = "/files/CV-WALDIR-BN-ESP.pdf"; // Reemplaza con la URL de tu archivo
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "CV-WALDIR-ESP.pdf"; // Nombre de archivo que se descargará
-    link.click();
-  };
 
   return (
     <>
@@ -33,8 +25,11 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
       <div className={`menu ${open ? "open" : ""}`}>
         <ul>
           <li>
-            <Link to="/" onClick={() => scrollToSection("about")}>
-              <span className="hashTag">#</span>about
+            <Switch />
+          </li>
+          <li>
+            <Link to="/" onClick={() => scrollToSection("experience")}>
+              <span className="hashTag">#</span>experience
             </Link>
           </li>
           <li>
@@ -42,21 +37,10 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
               <span className="hashTag">#</span>projects
             </Link>
           </li>
-          {/*           <li>
-            <Link to="/" onClick={() => scrollToSection("hobbies")}>
-              <span className="hashTag">#</span>hobbies
-            </Link>
-          </li> */}
           <li>
-            <Link to="/" onClick={() => scrollToSection("contact")}>
-              <span className="hashTag">#</span>contact
+            <Link to="/" onClick={() => scrollToSection("about")}>
+              <span className="hashTag">#</span>about
             </Link>
-          </li>
-          <Link to="/" className="resume" onClick={handleResumeClick}>
-            <span className="hashTag">#</span>resume
-          </Link>
-          <li>
-            <Switch />
           </li>
         </ul>
       </div>
