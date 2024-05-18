@@ -24,7 +24,7 @@ jobs:
 
       # Copia el package.json al directorio de trabajo
       - name: Copy package.json
-        run: cp /package.json .
+        run: cp package.json .
       # Ejecuta npm install para instalar las dependencias
       - run: npm ci
       - run: npm run build --if-present
