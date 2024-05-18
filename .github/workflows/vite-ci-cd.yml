@@ -48,7 +48,7 @@ jobs:
             echo "dist directory does not exist or is empty"
             exit 1
           fi
-      # teste Eliminado temporalmente
+      # Tests Eliminado temporalmente
       #- run: npm test
 
       # Paso 6: Información de depuración (opcional)
@@ -70,15 +70,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Verificación de la carpeta dist nuevamente en el job de despliegue
-      - name: Verify dist directory
-        run: |
-          if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
-            echo "dist directory exists and is not empty"
-          else
-            echo "dist directory does not exist or is empty"
-            exit 1
-          fi
+      - name: Verify SSH Connection and Directory
+        uses: appleboy/ssh-action@v0.1.1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "Verifying connection and directory..."
+            ls -la /home/wallydev/web/wallydev.dev/public_html
 
       # Copiar archivos via SSH
       - name: Copy files via SSH
@@ -95,7 +95,7 @@ jobs:
       #working-directory: /home/wallydev/web/wallydev.dev/public_html
 
       # Ejecutar comandos remotos via SSH
-      - name: Execute remote commands via SSH
+      - name: Execute remote commands via SSH/Install Dependencies and Restart Application
         uses: appleboy/ssh-action@v0.1.1
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -103,4 +103,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/wallydev/web/wallydev.dev/public_html
+            npm install
             # Reinicia tu aplicación si es necesario
