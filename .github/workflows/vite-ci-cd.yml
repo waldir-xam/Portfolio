@@ -15,22 +15,22 @@ jobs:
         node-version: [18.x, 20.x]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
-    - name: Debug Information
-      run: |
-        echo "Node Version: $(node -v)"
-        echo "NPM Version: $(npm -v)"
-        echo "Current Directory: $(pwd)"
-        echo "Directory Listing:"
-        ls -la
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+      - name: Debug Information
+        run: |
+          echo "Node Version: $(node -v)"
+          echo "NPM Version: $(npm -v)"
+          echo "Current Directory: $(pwd)"
+          echo "Directory Listing:"
+          ls -la
 
   deploy:
     runs-on: ubuntu-latest
@@ -38,21 +38,25 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-    - name: Copy files via SSH
-      uses: appleboy/scp-action@v0.1.0
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "dist/"
-        target: "/home/web/wallydev.dev/public_html"
+      - name: Install Dependencies
+        run: npm install
+        working-directory: /home/wallydev/web/wallydev.dev/public_html
 
-    - name: Execute remote commands via SSH
-      uses: appleboy/ssh-action@v0.1.1
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          cd /home/web/wallydev.dev/public_html
-          # Reinicia tu aplicación si es necesario
+      - name: Copy files via SSH
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "dist/"
+          target: "/home/web/wallydev.dev/public_html"
+
+      - name: Execute remote commands via SSH
+        uses: appleboy/ssh-action@v0.1.1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/web/wallydev.dev/public_html
+            # Reinicia tu aplicación si es necesario
