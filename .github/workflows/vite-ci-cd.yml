@@ -39,9 +39,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Install Dependencies
-        run: npm install
-        working-directory: /home/wallydev/web/wallydev.dev/public_html
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Copy files via SSH
         uses: appleboy/scp-action@v0.1.0
@@ -51,6 +50,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/"
           target: "/home/wallydev/web/wallydev.dev/public_html"
+
+      #- name: Install Dependencies
+      # run: npm install
+      #working-directory: /home/wallydev/web/wallydev.dev/public_html
 
       - name: Execute remote commands via SSH
         uses: appleboy/ssh-action@v0.1.1
