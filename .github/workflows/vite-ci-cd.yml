@@ -87,9 +87,9 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/wallydev-ops/web/wallydev.dev/public_html
-            npm install
-            pm2 restart all  # Si estás usando PM2 para manejar tu aplicación
-
+            /usr/bin/npm install  # Ruta completa al comando npm
+            /usr/bin/pm2 restart all  # Ruta completa al comando pm2
+            
   debug_ip:
     name: Debug IP Address
     runs-on: ubuntu-latest
