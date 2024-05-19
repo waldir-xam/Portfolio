@@ -56,9 +56,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./dist
-      - name: Display Downloaded files
-
+          path: ./*
+          merge-multiple: true
+      - name: Display structure of downloaded files
         run: ls -R ./*
 
       #- name: Copy files via SCP
@@ -94,7 +94,6 @@ jobs:
             source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
             nvm use v20.13.1  # Establecer la versión de Node.js
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
-            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/pm2 restart all
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview
 
   debug_ip:
