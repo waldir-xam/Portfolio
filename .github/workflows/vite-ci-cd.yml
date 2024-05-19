@@ -9,27 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
     strategy:
       matrix:
         node-version: [20.x]
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
-      - name: Use/Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-
       - name: Install dependencies
-        run: npm install
-
-      - name: Build Project
-        run: npm run build --if-present
-
+        run: npm ci
+      - name: Build
+        run: npm run build
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
@@ -37,21 +31,14 @@ jobs:
           path: |
             ./dist
             ./package.json
-            ./package-lock.json
 
   deploy:
-    name: Deploy
+    name: Deploy on VPS
     needs: build
     runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
-
       - name: Clean target directory
         uses: appleboy/ssh-action@v0.1.1
         with:
@@ -61,17 +48,25 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/wallydev-ops/web/wallydev.dev/public_html
-            find . ! -name 'index.html' ! -name 'robots.txt' -type f -exec rm -f {} +
+            find . ! -name 'index.html' -type f -exec rm -f {} +
 
-      - name: Copy files via SCP
-        uses: appleboy/scp-action@v0.1.0
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USER}}
-          password: ${{secrets.INPUT_PASSWORD}}
-          port: ${{secrets.SSH_PORT}}
-          source: "./dist/*"
-          target: "/home/wallydev-ops/web/wallydev.dev/public_html"
+          name: production-files
+          path: ./dist
+      - name: Display Downloaded files
+        run: ls -R /home/wallydev-ops/web/wallydev.dev/public_html
+
+      #- name: Copy files via SCP
+      #  uses: appleboy/scp-action@v0.1.0
+      #  with:
+      #    host: ${{secrets.SSH_HOST}}
+      #    username: ${{ secrets.SSH_USER}}
+      #    password: ${{secrets.INPUT_PASSWORD}}
+      #    port: ${{secrets.SSH_PORT}}
+      #    source: "./dist/*"
+      #    target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       #- name: Verify files copied
       #  uses: appleboy/ssh-action@v0.1.1
@@ -84,7 +79,7 @@ jobs:
       #      echo "Checking copied files..."
       #      ls -la /home/wallydev-ops/web/wallydev.dev/public_html
 
-      - name: Execute remote commands via SSH/Install Dependencies and Restart Application
+      - name: Execute
         uses: appleboy/ssh-action@v0.1.1
         with:
           host: ${{secrets.SSH_HOST}}
