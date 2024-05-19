@@ -60,31 +60,31 @@ jobs:
       - name: Verify SSH Connection and Directory
         uses: appleboy/ssh-action@v0.1.1
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          port: ${{secrets.SSH_PORT}}
           script: |
             echo "Verifying connection and directory..."
-            ls -la /home/wallydev/web/wallydev.dev/public_html
+            ls -la /home/wallydev-ops/web/wallydev.dev/public_html
 
       - name: Copy files via SSH
         uses: appleboy/scp-action@v0.1.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          port: ${{secrets.SSH_PORT}}
           source: "."
           target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       - name: Execute remote commands via SSH/Install Dependencies and Restart Application
         uses: appleboy/ssh-action@v0.1.1
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/wallydev-ops/web/wallydev.dev/public_html
             npm install
