@@ -25,6 +25,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
@@ -59,18 +60,19 @@ jobs:
             ./dist
             ./package.json
           merge-multiple: true
+
       - name: Display structure of downloaded files
         run: ls -R ./*
 
-      #- name: Copy files via SCP
-      #  uses: appleboy/scp-action@v0.1.0
-      #  with:
-      #    host: ${{secrets.SSH_HOST}}
-      #    username: ${{ secrets.SSH_USER}}
-      #    password: ${{secrets.INPUT_PASSWORD}}
-      #    port: ${{secrets.SSH_PORT}}
-      #    source: "./dist/*"
-      #    target: "/home/wallydev-ops/web/wallydev.dev/public_html"
+      - name: Copy files via SCP
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          password: ${{secrets.INPUT_PASSWORD}}
+          port: ${{secrets.SSH_PORT}}
+          source: "dist/*,package.json"
+          target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       #- name: Verify files copied
       #  uses: appleboy/ssh-action@v0.1.1
