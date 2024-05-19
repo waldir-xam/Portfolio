@@ -57,8 +57,13 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Debug Information
+        run: |
+          echo "Directory Listing of ./dist after download:"
+          ls -la ./dist
+
       - name: Copy files via SCP
-        uses: appleboy/scp-action@v0.1.1
+        uses: appleboy/scp-action@v0.1.0
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
@@ -68,7 +73,7 @@ jobs:
           target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       - name: Verify files copied
-        uses: appleboy/scp-action@v0.1.1
+        uses: appleboy/ssh-action@v0.1.1
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
