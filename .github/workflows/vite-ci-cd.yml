@@ -76,7 +76,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "."
-          target: "/home/wallydev/web/wallydev.dev/public_html"
+          target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       - name: Execute remote commands via SSH/Install Dependencies and Restart Application
         uses: appleboy/ssh-action@v0.1.1
@@ -86,7 +86,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/wallydev/web/wallydev.dev/public_html
+            cd /home/wallydev-ops/web/wallydev.dev/public_html
             npm install
             pm2 restart all  # Si estás usando PM2 para manejar tu aplicación
 
