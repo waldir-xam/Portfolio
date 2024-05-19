@@ -64,6 +64,12 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R ./*
 
+      - name: List files in dist directory
+        run: ls -la dist/
+
+      - name: Check if package.json exists
+        run: ls -la package.json
+
       - name: Copy files via SCP
         uses: appleboy/scp-action@v0.1.0
         with:
