@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build for Production
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -31,6 +32,7 @@ jobs:
           path: |
             ./dist
             ./package.json
+          run: ls -la
 
   deploy:
     name: Deploy on VPS
