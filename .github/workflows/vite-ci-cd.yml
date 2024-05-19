@@ -65,7 +65,7 @@ jobs:
         run: ls -R ./*
 
       - name: List files in dist directory
-        run: ls -la ./dist/
+        run: ls -la ./dist/*
 
       - name: Check if package.json exists
         run: ls -la ./package.json
