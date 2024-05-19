@@ -87,6 +87,8 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/wallydev-ops/web/wallydev.dev/public_html
+            source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
+            nvm use v20.13.1  # Establecer la versión de Node.js
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install  # Instalar dependencias utilizando npm
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/pm2 restart all  # Reiniciar la aplicación utilizando PM2
 
