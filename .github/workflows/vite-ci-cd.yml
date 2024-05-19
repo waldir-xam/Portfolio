@@ -89,3 +89,14 @@ jobs:
             cd /home/wallydev/web/wallydev.dev/public_html
             npm install
             pm2 restart all  # Si estás usando PM2 para manejar tu aplicación
+
+  debug_ip:
+    name: Debug IP Address
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: always()
+
+    steps:
+      - name: Debug IP
+        run: |
+          curl ifconfig.me
