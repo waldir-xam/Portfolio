@@ -75,7 +75,7 @@ jobs:
           username: ${{ secrets.SSH_USER}}
           key: ${{secrets.SSH_PRIVATE_KEY}}
           port: ${{secrets.SSH_PORT}}
-          source: "."
+          source: "./*"
           target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
       - name: Execute remote commands via SSH/Install Dependencies and Restart Application
