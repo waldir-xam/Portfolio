@@ -16,7 +16,6 @@ export { default as Projects } from "./pages/Home/Sections/Projects/Projects";
 
 export * from "./helpers/helpHttp";
 export * from "./index";
-export * from "./main";
 export { default as Home } from "./pages/Home/Home";
 export { default as ProjectsPage } from "./pages/Projects/ProjectsPage";
 export { default as Router } from "./router/Router";

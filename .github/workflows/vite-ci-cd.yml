@@ -1,4 +1,4 @@
-name: vite-VPS CI/CD
+name: vite-deploy to VPS - CI/CD
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -39,20 +39,10 @@ jobs:
             ./package.json
             ./package-lock.json
 
-      - name: Debug Information
-        run: |
-          echo "Node Version: $(node -v)"
-          echo "NPM Version: $(npm -v)"
-          echo "Current Directory: $(pwd)"
-          echo "Directory Listing:"
-          ls -la
-          echo "Directory Listing of ./dist:"
-          ls -la ./dist
-
   deploy:
     name: Deploy
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/main'
 
     steps:
@@ -62,10 +52,16 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Debug Information
-        run: |
-          echo "Directory Listing of ./dist after download:"
-          ls -la ./dist
+      - name: Clean target directory
+        uses: appleboy/ssh-action@v0.1.1
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          password: ${{secrets.INPUT_PASSWORD}}
+          port: ${{secrets.SSH_PORT}}
+          script: |
+            cd /home/wallydev-ops/web/wallydev.dev/public_html
+            find . ! -name 'index.html' ! -name 'robots.txt' -type f -exec rm -f {} +
 
       - name: Copy files via SCP
         uses: appleboy/scp-action@v0.1.0
@@ -74,19 +70,19 @@ jobs:
           username: ${{ secrets.SSH_USER}}
           password: ${{secrets.INPUT_PASSWORD}}
           port: ${{secrets.SSH_PORT}}
-          source: "./artifact/*"
+          source: "./dist/*"
           target: "/home/wallydev-ops/web/wallydev.dev/public_html"
 
-      - name: Verify files copied
-        uses: appleboy/ssh-action@v0.1.1
-        with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USER}}
-          password: ${{secrets.INPUT_PASSWORD}}
-          port: ${{secrets.SSH_PORT}}
-          script: |
-            echo "Checking copied files..."
-            ls -la /home/wallydev-ops/web/wallydev.dev/public_html
+      #- name: Verify files copied
+      #  uses: appleboy/ssh-action@v0.1.1
+      #  with:
+      #    host: ${{secrets.SSH_HOST}}
+      #    username: ${{ secrets.SSH_USER}}
+      #    password: ${{secrets.INPUT_PASSWORD}}
+      #    port: ${{secrets.SSH_PORT}}
+      #    script: |
+      #      echo "Checking copied files..."
+      #      ls -la /home/wallydev-ops/web/wallydev.dev/public_html
 
       - name: Execute remote commands via SSH/Install Dependencies and Restart Application
         uses: appleboy/ssh-action@v0.1.1
@@ -101,6 +97,7 @@ jobs:
             nvm use v20.13.1  # Establecer la versión de Node.js
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/pm2 restart all
+            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview
 
   debug_ip:
     name: Debug IP Address

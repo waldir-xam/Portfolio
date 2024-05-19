@@ -1,6 +1,6 @@
 import { Icon } from "../../../../index";
 import { Link } from "react-router-dom";
-import fotowaldir from "../../../../../public/images/fotowaldir.jpg";
+import fotowaldir from "./../../../../images/fotowaldir.jpg";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./Hero.scss"
