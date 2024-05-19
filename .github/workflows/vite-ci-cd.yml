@@ -34,7 +34,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: |
+            ./dist
+            ./package.json
+            ./package-lock.json
 
       - name: Debug Information
         run: |
@@ -43,6 +46,8 @@ jobs:
           echo "Current Directory: $(pwd)"
           echo "Directory Listing:"
           ls -la
+          echo "Directory Listing of ./dist:"
+          ls -la ./dist
 
   deploy:
     name: Deploy
@@ -94,8 +99,8 @@ jobs:
             cd /home/wallydev-ops/web/wallydev.dev/public_html
             source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
             nvm use v20.13.1  # Establecer la versión de Node.js
-            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install  # Instalar dependencias utilizando npm
-            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/pm2 restart all  # Reiniciar la aplicación utilizando PM2
+            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --production
+            /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/pm2 restart all
 
   debug_ip:
     name: Debug IP Address
