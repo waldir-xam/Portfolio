@@ -32,7 +32,6 @@ jobs:
           path: |
             ./dist
             ./package.json
-          run: ls -la
 
   deploy:
     name: Deploy on VPS
@@ -56,7 +55,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./*
+          path: |
+            ./dist
+            ./package.json
           merge-multiple: true
       - name: Display structure of downloaded files
         run: ls -R ./*
