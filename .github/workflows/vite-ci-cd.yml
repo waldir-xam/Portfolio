@@ -3,8 +3,12 @@ name: vite-deploy to VPS - CI/CD
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - ".github/workflows/**"
   pull_request:
     branches: ["main"]
+    paths-ignore:
+      - ".github/workflows/**"
 
 jobs:
   build:
@@ -32,6 +36,7 @@ jobs:
           path: |
             ./dist
             ./package.json
+
 
   deploy:
     name: Deploy on VPS
@@ -73,12 +78,6 @@ jobs:
           username: ${{ secrets.SSH_USER}}
           password: ${{secrets.INPUT_PASSWORD}}
           port: ${{secrets.SSH_PORT}}
-          #          script: |
-          #           cd /home/wallydev-ops/web/wallydev.dev/public_html
-          #           source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
-          #           nvm use v20.13.1  # Establecer la versión de Node.js
-          #           /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
-          #           /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview            nohup /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview > nohup.out 2>&1 &
           script: |
             cd /home/wallydev-ops/web/wallydev.dev/public_html
             source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
@@ -86,6 +85,20 @@ jobs:
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
             nohup /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview > nohup.out 2>&1 &
             sleep 5  # Asegurarse de que el comando nohup se ejecute correctamente
+
+      - name: Track Deployed Port
+        uses: appleboy/ssh-action@v0.1.1
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          password: ${{secrets.INPUT_PASSWORD}}
+          port: ${{secrets.SSH_PORT}}
+          script: |
+            echo "Finding deployed port..."
+            sleep 2  # A small delay to ensure the app has started
+            PORT=$(lsof -i -P -n | grep LISTEN | grep node | awk '{print $9}' | cut -d':' -f2)
+            echo "Application is running on port: $PORT"
+            echo "Application is running on port: $PORT" > /home/wallydev-ops/web/wallydev.dev/public_html/deployed_port.txt
 
   debug_ip:
     name: Debug IP Address
