@@ -7,7 +7,11 @@
 
   .experience-container {
     display: flex;
-    padding: 3em 0;
+    padding: 3rem 0;
+
+    @media (max-width: 599px) {
+      padding:2.5rem 0;
+    }
 
     .timeline-container {
       position: relative;

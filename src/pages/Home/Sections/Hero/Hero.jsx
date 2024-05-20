@@ -13,10 +13,10 @@ const Hero = () => {
           Hi! I'm <span className="hashTag">Waldir Apaza </span>
         </h1>
         <p>
-          +3 años de experiencia.
-          <span className="hashTag">Desarrollador Web Full Stack</span>
+          +3 años de experiencia.{" "}
+          <span className="hashTag">Desarrollador Web Full Stack</span>{" "}
           con una sólida formación en{" "}
-          <span className="hashTag">
+          <span className="hashTag">{" "}
             desarrollo de software y gestión de proyectos.
           </span>
         </p>

@@ -1,22 +1,5 @@
 @import "../../../../index.scss";
-.space-line {
-  height: 0.1em;
-  background-color: var(--color-primary);
-  margin: 0.6em;
 
-  @media (max-width: 599px) {
-    width: 20%;
-  }
-  @media (min-width: 600px) and (max-width: 991px) {
-    width: 50%;
-  }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    width: 50%;
-  }
-  @media (min-width: 1200px) {
-    width: 70%;
-  }
-}
 .sector {
   padding: 3rem 0;
   display: flex;

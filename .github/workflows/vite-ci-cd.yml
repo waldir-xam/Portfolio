@@ -40,33 +40,13 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Clean target directory
-        uses: appleboy/ssh-action@v0.1.1
-        with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USER}}
-          password: ${{secrets.INPUT_PASSWORD}}
-          port: ${{secrets.SSH_PORT}}
-          script: |
-            cd /home/wallydev-ops/web/wallydev.dev/public_html
-            find . ! -name 'index.html' -type f -exec rm -f {} +
-
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
           path: .
 
-      - name: Display structure of downloaded files
-        run: ls -R ./*
-
-      - name: List files in dist directory
-        run: ls -la ./dist
-
-      - name: Check if package.json exists
-        run: ls -la ./package.json
-
-      - name: Copy files via SCP
+      - name: Copy files to public_html
         uses: appleboy/scp-action@v0.1.0
         with:
           host: ${{secrets.SSH_HOST}}
@@ -75,18 +55,16 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           source: "./dist/*,./package.json"
           target: "/home/wallydev-ops/web/wallydev.dev/public_html/"
-          debug: true
+          overwrite: true
 
-      #- name: Verify files copied
-      #  uses: appleboy/ssh-action@v0.1.1
-      #  with:
-      #    host: ${{secrets.SSH_HOST}}
-      #    username: ${{ secrets.SSH_USER}}
-      #    password: ${{secrets.INPUT_PASSWORD}}
-      #    port: ${{secrets.SSH_PORT}}
-      #    script: |
-      #      echo "Checking copied files..."
-      #      ls -la /home/wallydev-ops/web/wallydev.dev/public_html
+      # - name: move files from Dist to public_html
+      #   uses: appleboy/ssh-action@v0.1.1
+      #   with:
+      #     host: ${{secrets.SSH_HOST}}
+      #     username: ${{ secrets.SSH_USER}}
+      #     password: ${{secrets.INPUT_PASSWORD}}
+      #     port: ${{secrets.SSH_PORT}}
+      #     script: cp -r dist/* /home/wallydev-ops/web/wallydev.dev/public_html
 
       - name: Execute
         uses: appleboy/ssh-action@v0.1.1
@@ -101,6 +79,7 @@ jobs:
             nvm use v20.13.1  # Establecer la versión de Node.js
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview
+            nohup /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview > nohup.out 2>&1 &
 
   debug_ip:
     name: Debug IP Address

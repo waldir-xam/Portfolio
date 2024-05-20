@@ -14,7 +14,7 @@
     margin: 0 auto;
 
     @media (max-width: 599px) {
-      padding-left: 0rem;
+      padding: 0 1.25rem;
       max-width: 100%;
     }
 
@@ -56,42 +56,66 @@
 
       @media (min-width: 1200px) {}
 
-      .title-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-weight: var(--fw-4);
-        font-size: 24px;
-        color: var(--DM-Title);
-        width: 100%;
-        justify-content: space-between;
 
-        // Media queries
-        @media (max-width: 599px) {}
-
-        @media (min-width: 600px) and (max-width: 991px) {
-          justify-content: space-between;
-        }
-
-        @media (min-width: 992px) and (max-width: 1199px) {
-          padding: 0em;
-        }
-
-        @media (min-width: 1200px) {}
-
-        .dark-theme {
-          color: $DM-Title;
-        }
-
-        .light-theme & {
-          color: $LM-Title;
-        }
-      }
     }
   }
 }
 
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: var(--fw-4);
+  font-size: 1.4rem;
+  color: var(--DM-Title);
+  width: 100%;
+  justify-content: space-between;
 
+  @media (max-width: 599px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 600px) and (max-width: 991px) {
+    justify-content: space-between;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding: 0em;
+  }
+
+  @media (min-width: 1200px) {}
+
+  .dark-theme {
+    color: $DM-Title;
+  }
+
+  .light-theme & {
+    color: $LM-Title;
+  }
+
+  .space-line {
+    height: 0.1em;
+    background-color: var(--color-primary);
+    margin: 0.6em;
+
+    @media (max-width: 599px) {
+      width: 40%;
+    }
+
+    @media (min-width: 600px) and (max-width: 991px) {
+      width: 50%;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1200px) {
+      width: 70%;
+    }
+  }
+}
 
 .scroll-container {
   animation: 1s ease 0s 1 normal none running fadeInUp;
