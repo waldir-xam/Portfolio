@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "../index";
 import Layout from "../components/Common/Layout/Layout";
 import ErrorPage from "../pages/error/errorPage";
+import NotFoundPage from "../pages/error/errorPage";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "*", // El comodín "*" captura cualquier ruta no definida
+        element: <NotFoundPage />,
       },
     ],
   },
