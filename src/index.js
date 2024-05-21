@@ -19,3 +19,4 @@ export * from "./index";
 export { default as Home } from "./pages/Home/Home";
 export { default as ProjectsPage } from "./pages/Projects/ProjectsPage";
 export { default as Router } from "./router/Router";
+export * from "./pages/error/errorPage"

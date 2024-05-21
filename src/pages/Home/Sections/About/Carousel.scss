@@ -4,49 +4,25 @@
   overflow: hidden;
   position: relative;
   margin-top: 5rem;
-  .carousel-images {
-    width: 300%;
-    height: 90%;
-    display: flex;
-    transition: transform 2s ease-in-out;
-    position: absolute;
-    left: 0;
 
-    & > img {
-      height: 60%;
+  .carousel-images {
+    display: flex;
+    transition: transform 1s infinite;
+    will-change: transform;
+    /* Para mejorar el rendimiento */
+
+    &>img {
+      height: 5.7rem;
       object-fit: contain;
       cursor: pointer;
-      transition: opacity 0.3s ease-in-out;
       opacity: 1;
-      margin-left: 5rem;
-      justify-content: center;
-      display: flex;
-      align-items: center;
+      flex: 0 0 auto;
+      /* Las imágenes no se redimensionan */
 
-      &.active {
-        opacity: 1;
+      &:not(:last-child) {
+        margin-right: 5rem;
+        /* Espacio entre imágenes */
       }
     }
-  }
-
-  &:hover {
-    .carousel-images > img {
-      opacity: 1;
-    }
-  }
-
-  /* Keyframe para mover el carrusel de manera continua */
-  @keyframes moveCarousel {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-200%);
-    }
-  }
-
-  /* Configuración para hacer el carrusel infinito */
-  .carousel-images {
-    animation: moveCarousel 10s linear infinite;
   }
 }

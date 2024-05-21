@@ -10,7 +10,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="experience">
+    <div className="experience" id="experience">
       <div className="title-container">
         <h2>
           <span className="hashTag">#</span>experiencia

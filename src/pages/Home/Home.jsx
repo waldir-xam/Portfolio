@@ -13,10 +13,10 @@ const Home = () => {
   return (
     <div className="home-background">
       <div className="home-container">
-        <Hero id="hero" />
-        <Experience id="experience" />
-        <Projects id="projects" />
-        <About id="about" />
+        <Hero />
+        <Experience />
+        <Projects />
+        <About />
       </div>
     </div>
   );

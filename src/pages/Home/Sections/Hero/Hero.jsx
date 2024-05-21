@@ -7,7 +7,7 @@ import "./Hero.scss"
 
 const Hero = () => {
   return (
-    <div className="hero-container">
+    <div className="hero-container" id="hero">
       <div className="hero-left">
         <h1>
           Hi! I'm <span className="hashTag">Waldir Apaza </span>

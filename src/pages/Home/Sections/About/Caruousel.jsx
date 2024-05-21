@@ -1,48 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.scss";
 import logos from "../../../../Content/logos.json";
 
 const Carousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef();
+  const carouselRef = useRef();
 
   const handleMouseEnter = () => {
     setIsPaused(true);
+    clearInterval(intervalRef.current);
   };
 
   const handleMouseLeave = () => {
     setIsPaused(false);
+    startCarousel();
+  };
+
+  const startCarousel = () => {
+    intervalRef.current = setInterval(() => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: carouselRef.current.offsetWidth,
+          behavior: 'smooth'
+        });
+
+        if (carouselRef.current.scrollLeft + carouselRef.current.offsetWidth >= carouselRef.current.scrollWidth) {
+          carouselRef.current.scrollLeft = 0;
+        }
+      }
+    }, 1750);
   };
 
   useEffect(() => {
-    let intervalId;
-
-    if (!isPaused) {
-      intervalId = setInterval(() => {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % logos.length);
-      }, 3000);
-    }
-
-    return () => clearInterval(intervalId);
-  }, [isPaused]);
+    startCarousel();
+    return () => clearInterval(intervalRef.current);
+  }, []);
 
   return (
     <div
       className="carousel"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      ref={carouselRef}
     >
-      <div
-        className="carousel-images"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-      >
-        {logos.map((logo, index) => (
+      <div className="carousel-images">
+        {[...logos, ...logos].map((logo, index) => (
           <img
-            key={logo.id}
+            key={index}
             src={logo.image}
             alt={logo.name}
-            className={index === activeIndex ? "active" : ""}
-            onMouseEnter={handleMouseEnter}
           />
         ))}
       </div>

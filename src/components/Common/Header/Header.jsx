@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { Switch, Menu, MenuButton } from "../../../index";
+import { Menu, MenuButton } from "../../../index";
 import "../Header/Header.scss";
 
 const Header = () => {
-  // Estado para el scroll
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  // Función para el scroll
+  const [manualScroll, setManualScroll] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
+      if (manualScroll) return;
+
       const currentScrollPos = window.pageYOffset;
-      const visible = prevScrollPos > currentScrollPos;
+      const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
       setPrevScrollPos(currentScrollPos);
       setVisible(visible);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
-  // Estado para abrir el menú
+  }, [prevScrollPos, manualScroll]);
+
   const [isOpen, setIsOpen] = useState(false);
   const openMenu = () => {
     setIsOpen(true);
@@ -30,8 +33,25 @@ const Header = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
-  const handleLinkClick = () => {
+  const handleLinkClick = (id) => {
     closeMenu();
+    setManualScroll(true);
+    scrollToSection(id);
+    setTimeout(() => {
+      setManualScroll(false);
+    }, 900);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const topPosition =
+        element.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({
+        top: topPosition,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
