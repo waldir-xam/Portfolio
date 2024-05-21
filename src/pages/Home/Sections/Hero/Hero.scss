@@ -93,9 +93,12 @@
         border-color: $DM-Title;
       }
 
+
       .light-theme & {
         border-color: $LM-Title;
       }
+
+
 
       @media (max-width: 599px) {
         width: auto;
@@ -157,9 +160,12 @@
       color: $DM-Title;
     }
 
+
     .light-theme & {
       color: $LM-Title;
     }
+
+
 
     p {
       margin-top: 1em;
@@ -175,13 +181,16 @@
       @media (min-width: 1200px) {}
     }
 
+
     .dark-theme & {
       color: $DM-Title;
     }
 
+
     .light-theme & {
       color: $LM-Title;
     }
+
 
     .social-buttons {
       margin-top: 1.5rem;
@@ -203,30 +212,35 @@
         font-weight: var(--fw-4);
 
 
+
         .dark-theme & {
           color: $DM-Title;
         }
 
+
         .light-theme & {
           color: $LM-Title;
-
         }
+
 
         &:hover {
           transition: 0.3s ease;
           cursor: pointer;
+
 
           .dark-theme & {
             color: var(--color-primary);
 
           }
 
+
+
           .light-theme & {
             color: var(--color-primary);
             border: var(--color-primary) solid 0.12rem;
-
-
           }
+
+
         }
 
         *:hover {

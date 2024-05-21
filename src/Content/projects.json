@@ -2,7 +2,7 @@
   {
     "id": "0",
     "title": "Github Searcher",
-    "image": "/images/proy1.png",
+    "image": "/images/proy1.webp",
     "description": "Buscador de usuarios de github, da info,detalles y repos del usuario buscado",
     "skills": ["React", "CSS", "MUI"],
     "websiteLink": "https://github-searcher-2-0.vercel.app/",
@@ -11,7 +11,7 @@
   {
     "id": "1",
     "title": "Portfolio",
-    "image": "/images//proy2.png",
+    "image": "/images//proy2.webp",
     "description": "Portfolio con info acerca de mi, proyectos y contacto",
     "skills": ["React", "SCSS"],
     "websiteLink": "https://vercel.com",
@@ -20,7 +20,7 @@
   {
     "id": "2",
     "title": "Rick & Morty",
-    "image": "/images/proy2.png",
+    "image": "/images/proy2.webp",
     "description": "App usando la API fake de Rick & Morty",
     "skills": ["Javascript", "Bootstrap"],
     "websiteLink": "https://rick-y-morty-api-phi.vercel.app/",
@@ -29,7 +29,7 @@
   {
     "id": "3",
     "title": "Task List/To do ",
-    "image": "/images/proy3.png",
+    "image": "/images/proy3.webp",
     "description": "More projects in progress...",
     "skills": ["React", "Tailwind", "Redux"],
     "websiteLink": "https://react-crud-todo-phi.vercel.app/",

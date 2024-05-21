@@ -7,22 +7,22 @@ const Menu = ({ handleLinkClick }) => {
     <nav className="menu-header">
       <ul>
         <li>
-          <Switch />
-        </li>
-        <li>
-          <Link to="/" onClick={() => handleLinkClick ("experience")}>
+          <Link to="/" onClick={() => handleLinkClick("experience")}>
             <span className="hashTag">#</span>experience
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => handleLinkClick ("projects")}>
+          <Link to="/" onClick={() => handleLinkClick("projects")}>
             <span className="hashTag">#</span>projects
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => handleLinkClick ("about")}>
+          <Link to="/" onClick={() => handleLinkClick("about")}>
             <span className="hashTag">#</span>about
           </Link>
+        </li>
+        <li>
+          <Switch />
         </li>
       </ul>
     </nav>

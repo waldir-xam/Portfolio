@@ -28,14 +28,18 @@
     margin-top: 2px;
     z-index: 1000;
 
-    .dark-theme & {
-      background-color: var(--BgDark);
-    }
+      .dark-theme & {
+        background-color: var(--BgDark);
+      }
+    
 
-    .light-theme & {
-      background-color: var(--BgLight);
-      border-bottom: 2px solid $primary-color;
-    }
+
+      .light-theme & {
+        background-color: var(--BgLight);
+        border-bottom: 2px solid $primary-color;
+      }
+    
+
 
     @media (max-width: 599px) {
       width: 95%;
@@ -59,14 +63,14 @@
         font-size: 1.5rem;
         font-weight: 600;
 
-        // VERIFICAR LUEGO SI SE POUEDE MIGRAR EL COLOR AL INICIO DE HEADER CONTAINER PARA ALIGERAR
-        .dark-theme & {
-          color: $DM-Title;
-        }
+          .dark-theme & {
+            color: $DM-Title;
+          }
+        
 
-        .light-theme & {
-          color: $LM-Title;
-        }
+          .light-theme & {
+            color: $LM-Title;
+          }
       }
     }
 
