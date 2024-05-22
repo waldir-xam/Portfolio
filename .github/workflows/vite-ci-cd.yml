@@ -37,7 +37,6 @@ jobs:
             ./dist
             ./package.json
 
-
   deploy:
     name: Deploy on VPS
     needs: build
@@ -83,7 +82,7 @@ jobs:
             source /home/wallydev-ops/.nvm/nvm.sh  # Cargar NVM
             nvm use v20.13.1  # Establecer la versión de Node.js
             /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm install --omit=dev
-            nohup /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview > nohup.out 2>&1 &
+            nohup /home/wallydev-ops/.nvm/versions/node/v20.13.1/bin/npm run preview --port 3000 > nohup.out 2>&1 &
             sleep 5  # Asegurarse de que el comando nohup se ejecute correctamente
 
       - name: Track Deployed Port
