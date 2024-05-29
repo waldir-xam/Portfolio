@@ -44,7 +44,7 @@ const MenuButton = ({ openMenu, closeMenu, isOpen }) => {
           </li>
         </ul>
       </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
+      <button className="menu-toggle" onClick={toggleMenu} aria-label="monstrar menu de navegacion">
         <span className={`menu-toggle__icon ${open ? "open" : ""}`} />
       </button>
     </>
