@@ -16,26 +16,23 @@ const Footer = () => {
         <div className="footer-right">
           <span className="footer-social-icons">
             <Link
-              onClick={() =>
-                window.open("https://github.com/waldir-xam", "_blank")
-              }
+              to="https://github.com/waldir-xam"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon css="icon" icon={faGithub} />
             </Link>
             <Link
-              onClick={() =>
-                window.open(
-                  "http://www.discordapp.com/users/597457139736510505",
-                  "_blank"
-                )
-              }
+              to="http://www.discordapp.com/users/597457139736510505"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon css="icon" icon={faDiscord} />
             </Link>
             <Link
-              onClick={() =>
-                window.open("https://www.linkedin.com/in/waldirxam/", "_blank")
-              }
+              to="https://www.linkedin.com/in/waldirxam/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon css="icon" icon={faLinkedin} />
             </Link>
