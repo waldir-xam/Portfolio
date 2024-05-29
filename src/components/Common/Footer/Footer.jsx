@@ -18,7 +18,7 @@ const Footer = () => {
             <Link
               to="https://github.com/waldir-xam"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" aria-label="Visita mi github"
             >
               <Icon css="icon" icon={faGithub} />
             </Link>
@@ -26,6 +26,7 @@ const Footer = () => {
               to="http://www.discordapp.com/users/597457139736510505"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contactame por discord"
             >
               <Icon css="icon" icon={faDiscord} />
             </Link>
@@ -33,6 +34,7 @@ const Footer = () => {
               to="https://www.linkedin.com/in/waldirxam/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visita mi linkedin y conecta conmigo"
             >
               <Icon css="icon" icon={faLinkedin} />
             </Link>
