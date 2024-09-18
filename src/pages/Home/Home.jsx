@@ -22,7 +22,8 @@ const Home = () => {
         {/* Metadatos de Open Graph específicos para Home */}
         <meta property="og:title" content="Inicio - home" />
         <meta property="og:description" content="Descripción de la página de inicio" />
-        <meta property="og:image" content="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png" />
+        
+        <meta property="og:image" content="https://invitafy.com/23us/ElizabethYKenny/_app/immutable/assets/portada_x1-8a9c6d91.jpg"/>
         <meta property="og:url" content="https://wallydev.dev/" />
         <meta property="og:type" content="website" />
       </Helmet>
