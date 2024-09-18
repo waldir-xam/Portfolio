@@ -4,7 +4,9 @@ import { ThemeContext } from "../../../index";
 import "./Layout.scss";
 import { Outlet } from "react-router-dom";
 import { GoogleFontsOptimizer } from "../../Context/FontsOptimizer";
-import MetaTags from "../../../pages/meta/MetaTagsTS";
+import SEO from "../../../pages/meta/HelmetSEO";
+import { Helmet } from "react-helmet-async";
+//import MetaTags from "../../../pages/meta/MetaTagsTS";
 
 const Layout = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -21,7 +23,7 @@ const Layout = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <MetaTags
+      {/*       <MetaTags
         title="Karol & Hector"
         url={`https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png`}
         description="bienvenido"
@@ -33,7 +35,24 @@ const Layout = () => {
           { property: "og:image:height", content: "630" },
           { property: "og:image:type", content: "image/jpeg" },
         ]}
-      />
+      /> */}
+      <Helmet>
+        <title>Título General</title>
+        <meta name="description of layout" content="layout content" />
+
+        {/* Metadatos de Open Graph */}
+        <meta property="og:title" content="wallydev- layout" />
+        <meta
+          property="og:description"
+          content="Descripción general del layout"
+        />
+        <meta
+          property="og:image"
+          content="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png"
+        />
+        <meta property="og:url" content="https://wallydev.dev" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div className={`App ${theme}-theme`}>
         <GoogleFontsOptimizer />
         <Header />
