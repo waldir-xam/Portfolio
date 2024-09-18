@@ -1,3 +1,4 @@
+//barrel
 export { default as Switch } from "./components/Common/Buttons/Switch/Switch";
 export { default as Footer } from "./components/Common/Footer/Footer";
 export { default as Header } from "./components/Common/Header/Header";
@@ -19,4 +20,4 @@ export * from "./index";
 export { default as Home } from "./pages/Home/Home";
 export { default as ProjectsPage } from "./pages/Projects/ProjectsPage";
 export { default as Router } from "./router/Router";
-export * from "./pages/error/errorPage"
+export * from "./pages/error/errorPage";

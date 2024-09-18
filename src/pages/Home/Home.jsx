@@ -12,7 +12,7 @@ const Home = () => {
         title="Portfolio de Waldir - Desarrollador y programador web con mas de 3 años de experiencia"
         description="Contrata a Waldir para crear tu aplicación web o webapp. Desarrollador Web. Especializado en crear webs y apps únicos."
         url="https://wallydev.dev"
-        image="https://i.postimg.cc/pdBh5HKM/proy2.png"
+        image="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png"
       />
       <div className="home-container">
         <Hero />
