@@ -16,14 +16,18 @@ const Home = () => {
         image="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png"
       /> */}
       <Helmet>
-      <title>Inicio - Mi Aplicación</title>
+        <title>Inicio - Mi Aplicación</title>
         <meta name="description" content="Página de inicio" />
-
-        {/* Metadatos de Open Graph específicos para Home */}
         <meta property="og:title" content="Inicio - home" />
-        <meta property="og:description" content="Descripción de la página de inicio" />
-        
-        <meta property="og:image" content="https://invitafy.com/23us/ElizabethYKenny/_app/immutable/assets/portada_x1-8a9c6d91.jpg"/>
+        <meta
+          property="og:description"
+          content="Contrata a Waldir para crear tu aplicación web o webapp. Desarrollador Web. Especializado en crear webs y apps únicos."
+        />
+
+        <meta
+          property="og:image"
+          content="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png"
+        />
         <meta property="og:url" content="https://wallydev.dev/" />
         <meta property="og:type" content="website" />
       </Helmet>

@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "*", // El comodín "*" captura cualquier ruta no definida
+        path: "*",
         element: <NotFoundPage />,
       },
     ],

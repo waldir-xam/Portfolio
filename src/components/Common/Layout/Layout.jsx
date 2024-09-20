@@ -4,7 +4,7 @@ import { ThemeContext } from "../../../index";
 import "./Layout.scss";
 import { Outlet } from "react-router-dom";
 import { GoogleFontsOptimizer } from "../../Context/FontsOptimizer";
-import SEO from "../../../pages/meta/HelmetSEO";
+//import SEO from "../../../pages/meta/HelmetSEO";
 import { Helmet } from "react-helmet-async";
 //import MetaTags from "../../../pages/meta/MetaTagsTS";
 
@@ -23,24 +23,9 @@ const Layout = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {/*       <MetaTags
-        title="Karol & Hector"
-        url={`https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png`}
-        description="bienvenido"
-        image={imageUrl}
-        robots="noindex, nofollow"
-        additionalTags={[
-          { property: "og:image:secure_url", content: imageUrl },
-          { property: "og:image:width", content: "1200" },
-          { property: "og:image:height", content: "630" },
-          { property: "og:image:type", content: "image/jpeg" },
-        ]}
-      /> */}
       <Helmet>
-        <title>Título General</title>
+        <title>Portfolio de wallydev</title>
         <meta name="description of layout" content="layout content" />
-
-        {/* Metadatos de Open Graph */}
         <meta property="og:title" content="wallydev- layout" />
         <meta
           property="og:description"
