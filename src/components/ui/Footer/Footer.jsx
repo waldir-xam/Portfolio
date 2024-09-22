@@ -1,5 +1,5 @@
 import React from "react";
-import "../Footer/Footer.scss";
+import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { Icon } from "../../Icons";
 import {
@@ -18,7 +18,8 @@ const Footer = () => {
             <Link
               to="https://github.com/waldir-xam"
               target="_blank"
-              rel="noopener noreferrer" aria-label="Visita mi github"
+              rel="noopener noreferrer"
+              aria-label="Visita mi github"
             >
               <Icon css="icon" icon={faGithub} />
             </Link>

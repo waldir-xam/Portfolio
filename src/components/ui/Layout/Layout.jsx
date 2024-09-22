@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Header, Footer } from "../../../index";
-import { ThemeContext } from "../../../index";
+import { Header, Footer } from "../../../barrell";
+import { ThemeContext } from "../../../barrell";
 import "./Layout.scss";
 import { Outlet } from "react-router-dom";
 import { GoogleFontsOptimizer } from "../../Context/FontsOptimizer";

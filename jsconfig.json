@@ -1,0 +1,26 @@
+{
+  "include": ["src/**/*", "images/**/*"],
+  "compilerOptions": {
+    // Tipado estricto
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    // Soporte ES6+
+    "target": "es6",
+    "module": "esnext",
+    "lib": ["es2015", "dom"],
+    // Resolución de módulos
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    // Rutas @
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@images/*": ["images/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

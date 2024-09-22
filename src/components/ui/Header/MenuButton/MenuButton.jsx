@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Icon, Switch } from "../../../../index";
+import { Icon, Switch } from "../../../../barrell";
 import { Link } from "react-router-dom";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./MenuButton.scss";

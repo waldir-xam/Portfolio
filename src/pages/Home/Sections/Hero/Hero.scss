@@ -195,7 +195,7 @@
     .social-buttons {
       margin-top: 1.5rem;
       display: flex;
-      gap: 5%;
+      gap: 8%;
       font-size: 1rem;
 
       .social-btn {
@@ -207,6 +207,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 10rem;
         gap: 5%;
         text-decoration: none;
         font-weight: var(--fw-4);

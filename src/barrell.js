@@ -1,10 +1,10 @@
 //barrel
-export { default as Switch } from "./components/Common/Buttons/Switch/Switch";
-export { default as Footer } from "./components/Common/Footer/Footer";
-export { default as Header } from "./components/Common/Header/Header";
-export { default as Menu } from "./components/Common/Header/Menu/Menu";
-export { default as MenuButton } from "./components/Common/Header/MenuButton/MenuButton";
-export { default as Layout } from "./components/Common/Layout/Layout";
+export { default as Switch } from "./components/ui/Buttons/Switch/Switch";
+export { default as Footer } from "./components/ui/Footer/Footer";
+export { default as Header } from "./components/ui/Header/Header";
+export { default as Menu } from "./components/ui/Header/Menu/Menu";
+export { default as MenuButton } from "./components/ui/Header/MenuButton/MenuButton";
+export { default as Layout } from "./components/ui/Layout/Layout";
 export * from "./components/Context/ThemeContext";
 export * from "./components/Icons";
 /* IMPORTA LAS SECCIONES */
@@ -16,8 +16,10 @@ export { default as Projects } from "./pages/Home/Sections/Projects/Projects";
  */
 
 export * from "./helpers/helpHttp";
-export * from "./index";
+export * from "./barrell";
 export { default as Home } from "./pages/Home/Home";
 export { default as ProjectsPage } from "./pages/Projects/ProjectsPage";
 export { default as Router } from "./router/Router";
 export * from "./pages/error/errorPage";
+
+export { default as i18n } from "./i18n";

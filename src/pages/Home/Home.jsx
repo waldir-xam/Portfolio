@@ -1,9 +1,9 @@
-import { About, Projects } from "../../index";
+import { About, Projects } from "../../barrell";
 import Experience from "./Sections/Experience/Experience";
 import Hero from "./Sections/Hero/Hero";
 //import MetaTags from "../meta/MetaTags";
 
-import "../Home/Home.scss";
+import "./Home.scss";
 import { Helmet } from "react-helmet-async";
 
 const Home = () => {

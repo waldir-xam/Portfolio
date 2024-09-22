@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Caruousel } from "../../../../index";
+import { Caruousel } from "../../../../barrell";
 import "./About.scss";
 
 const About = () => {
