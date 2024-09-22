@@ -5,7 +5,10 @@ import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "@/barrell";
 import projects from "@/Content/projects.json";
 import "./Projects.scss";
-import imageOne from '@/images/projects/'
+
+const importImage = (imageName) => {
+  return require(`@/images/projects/${imageName}`);
+};
 
 const Proyects = () => {
   return (
@@ -22,7 +25,7 @@ const Proyects = () => {
       <div className="proyect-list">
         {projects.map((project) => (
           <div key={project.id} className="project">
-            <img src={project.image} alt={project.title} />
+            <img src={importImage(project.image)} alt={project.title} />
             <div className="content">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
