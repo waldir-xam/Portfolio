@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "@/barrell";
-import projects from "../../../../Content/projects.json";
+import projects from "@/Content/projects.json";
 import "./Projects.scss";
+import imageOne from '@/images/projects/'
 
 const Proyects = () => {
   return (
