@@ -2,7 +2,7 @@
   {
     "id": "0",
     "title": "Github Searcher",
-    "image": "proy1.webp",
+    "image": "/proy1.webp",
     "description": "Buscador de usuarios de github, da info,detalles y repos del usuario buscado",
     "skills": ["React", "CSS", "MUI"],
     "websiteLink": "https://github-searcher-2-0.vercel.app/",
