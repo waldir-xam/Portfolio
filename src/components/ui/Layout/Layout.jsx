@@ -23,21 +23,6 @@ const Layout = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <Helmet>
-        <title>Portfolio de wallydev</title>
-        <meta name="description of layout" content="layout content" />
-        <meta property="og:title" content="wallydev- layout" />
-        <meta
-          property="og:description"
-          content="Descripción general del layout"
-        />
-        <meta
-          property="og:image"
-          content="https://i.postimg.cc/s2CN39F3/Screenshot-from-2024-09-17-21-41-35.png"
-        />
-        <meta property="og:url" content="https://wallydev.dev" />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <div className={`App ${theme}-theme`}>
         <GoogleFontsOptimizer />
         <Header />
