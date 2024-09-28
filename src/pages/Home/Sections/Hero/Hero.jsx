@@ -37,7 +37,9 @@ const Hero = () => {
             className="social-btn"
             target="_blank"
           >
-            <Icon css="icon" icon={faLinkedin} /> {t("hero.linkedInButton")}
+            <button>
+              <Icon css="icon" icon={faLinkedin} /> {t("hero.linkedInButton")}
+            </button>
           </Link>
         </div>
       </div>
